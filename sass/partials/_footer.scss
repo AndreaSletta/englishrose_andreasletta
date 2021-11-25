@@ -1,0 +1,15 @@
+footer .row div a {
+  text-decoration: none;
+  color: black;
+}
+
+footer .row div form div {
+  display: flex;
+  flex-direction: row;
+}
+
+footer .row div form div .form-control {
+  width: auto;
+  border-radius: 0;
+  border: 3px solid black;
+}

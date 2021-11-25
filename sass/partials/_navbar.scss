@@ -1,0 +1,21 @@
+.navbar .container-fluid .navbar-brand {
+  background-image: url("../../files/logo.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 80%;
+  height: 35px;
+  position: absolute;
+  margin-left: 10%;
+  top: 12px;
+}
+
+.navbar .container-fluid .navbar-brand :hover {
+  background-image: url("../../files/logo_red.svg");
+}
+
+header .navbar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  z-index: 10;
+}
