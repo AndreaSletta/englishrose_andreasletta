@@ -1,10 +1,3 @@
-.text-red {
-  color: #c30b0b;
-}
-
-/*
-$accordion-button-icon: none;
-$accordion-button-active-icon: none; */
 .navbar .container-fluid .navbar-brand, .navbar .container-sm .navbar-brand, .navbar .container-md .navbar-brand, .navbar .container-lg .navbar-brand, .navbar .container-xl .navbar-brand, .navbar .container-xxl .navbar-brand {
   background-image: url("../../files/logo.svg");
   background-size: contain;
@@ -30,7 +23,6 @@ header .navbar {
 .jumbotron {
   background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#fddfdf));
   background-image: linear-gradient(white, #fddfdf);
-  padding-top: 70px;
   height: 100vh;
 }
 
@@ -43,17 +35,31 @@ header .navbar {
   bottom: 0;
 }
 
-main .btn {
+body {
+  font-weight: 400;
+  font-style: normal;
+}
+
+.text-red {
+  color: #c30b0b;
+}
+
+footer .row div a,
+.breadcrumb a {
+  text-decoration: none;
+  color: black;
+}
+
+.serif {
+  font-family: monarcha, serif;
+}
+
+.jumbotron .btn {
   background-color: white;
 }
 
 footer .row div form div button {
   border-radius: 0;
-}
-
-footer .row div a {
-  text-decoration: none;
-  color: black;
 }
 
 footer .row div form div {
@@ -70,6 +76,15 @@ footer .row div form div .form-control {
   width: auto;
   border-radius: 0;
   border: 3px solid black;
+}
+
+.clear-navbar {
+  padding-top: 70px;
+}
+
+.shop div form div input {
+  border-radius: 0;
+  border: 3px solid #fddfdf;
 }
 
 /*!
@@ -120,7 +135,7 @@ footer .row div form div .form-control {
 
 body {
   margin: 0;
-  font-family: var(--bs-font-sans-serif);
+  font-family: soleil, sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -145,6 +160,7 @@ hr:not([size]) {
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
+  font-family: monarcha, serif;
   font-weight: 500;
   line-height: 1.2;
 }
@@ -3219,6 +3235,7 @@ textarea.form-control-lg {
 
 .btn {
   display: inline-block;
+  font-family: monarcha, serif;
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
@@ -6415,7 +6432,7 @@ fieldset:disabled .btn {
   z-index: 1080;
   display: block;
   margin: 0;
-  font-family: var(--bs-font-sans-serif);
+  font-family: soleil, sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -6528,7 +6545,7 @@ fieldset:disabled .btn {
   z-index: 1070;
   display: block;
   max-width: 276px;
-  font-family: var(--bs-font-sans-serif);
+  font-family: soleil, sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;

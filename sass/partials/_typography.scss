@@ -1,0 +1,18 @@
+body {
+  font-weight: 400;
+  font-style: normal;
+}
+
+.text-red {
+  color: $red;
+}
+
+footer .row div a,
+.breadcrumb a {
+  text-decoration: none;
+  color: black;
+}
+
+.serif {
+  font-family: $font-family-serif;
+}
