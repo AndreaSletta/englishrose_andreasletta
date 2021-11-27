@@ -1,5 +1,5 @@
-export function getProducts() {
-  const products = localStorage.getProduct("products");
+export function getCartProducts() {
+  const products = localStorage.getCartProducts("products");
 
   if (!products) {
     return [];
