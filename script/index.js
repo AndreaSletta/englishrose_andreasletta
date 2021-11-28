@@ -29,7 +29,7 @@ async function getProducts() {
         <div class="card-body">
           <h5 class="card-title">${product[i].title}</h5>
           <p class="card-text">$ ${product[i].price}</p>
-          <a href="product.html?id=${product[i].id}" class="btn btn-primary">Shop now</a>
+          <a href="product.html?id=${product[i].id}" class="btn">Shop now</a>
           <i class="fas fa-cart-plus add-to-cart"></i>
         </div>
       </div>

@@ -1,8 +1,10 @@
-.jumbotron .btn {
+.jumbotron .btn,
+.card .card-body .btn {
   background-color: white;
 }
 
 footer .row div form div button,
-.container .row div button {
+.container .row div button,
+.card .card-body .btn {
   border-radius: 0;
 }

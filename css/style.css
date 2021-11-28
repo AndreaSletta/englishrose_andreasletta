@@ -54,12 +54,14 @@ footer .row div a,
   font-family: monarcha, serif;
 }
 
-.jumbotron .btn {
+.jumbotron .btn,
+.card .card-body .btn {
   background-color: white;
 }
 
 footer .row div form div button,
-.container .row div button {
+.container .row div button,
+.card .card-body .btn {
   border-radius: 0;
 }
 
@@ -83,9 +85,23 @@ footer .row div form div .form-control {
   padding-top: 70px;
 }
 
+.padding {
+  padding: 10vw;
+}
+
 .shop div form div input {
   border-radius: 0;
   border: 3px solid #fddfdf;
+}
+
+.carousel .carousel-inner .carousel-item .card {
+  background-color: #fddfdf;
+  border-radius: 0;
+  border-color: transparent;
+}
+
+.carousel .carousel-inner .carousel-item .card img {
+  padding: 10px;
 }
 
 /*!
