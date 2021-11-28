@@ -61,11 +61,7 @@
           <button type="button" class="btn shadow">Shop now</button>
         </div>
         <!-- Remove image and import from api, aslo check size -->
-        <img
-          src="files/temporaryyyyyyyyyyyy.png"
-          class="img-fluid"
-          alt="Makup items spread around"
-        />
+
         <img
           src="files/arrow.png"
           class="mx-auto d-block"
@@ -139,7 +135,16 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+
+      <div class="carouselcontainer d-none">
+        <button class="buttonleft" aria-label="scroll left"></button>
+        <div class="carousel2" id="arrowlink">
+          <div class="postconatiner smoothetransition"></div>
+        </div>
+        <button class="buttonright" aria-label="scroll right"></button>
+      </div>
     </main>
+
     <footer class="container bg-primary py-3">
       <div class="row justify-content-center">
         <div class="col-8">
@@ -218,5 +223,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="script/index.js" type="module"></script>
+    <script src="script/jumbotron.js" type="module"></script>
   </body>
 </html>

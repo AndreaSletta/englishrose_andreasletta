@@ -1,8 +1,91 @@
-.carousel .carousel-inner .carousel-item .card {
-  background-color: $primary;
-  border-radius: 0;
-  border-color: transparent;
-  img {
-    padding: 10px;
+.carousel .carousel-inner .carousel-item .row {
+  .card {
+    background-color: $primary;
+    border-radius: 0;
+    border-color: transparent;
+    img {
+      padding: 10px;
+    }
   }
+}
+
+.carouselcontainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.buttonright,
+.buttonleft {
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 10%;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+}
+.buttonleft {
+  height: 10px;
+  width: 10px;
+  background-color: $red;
+}
+
+.buttonright:hover,
+.buttonleft:hover {
+  cursor: pointer;
+}
+
+.buttonright {
+  height: 10px;
+  width: 10px;
+  background-color: $red;
+}
+
+.carousel2 {
+  overflow: hidden;
+  width: 70%;
+}
+.postconatiner {
+  flex-direction: row;
+  position: relative;
+  display: flex;
+  left: 0;
+  margin-left: 0vw;
+  padding: 20px 0;
+}
+
+.postconatiner div {
+  width: 60vw;
+  height: 400px;
+  margin: 0 5vw;
+  box-shadow: 0px 3px 6px rgb(184, 184, 184);
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.postconatiner a {
+  text-decoration: none;
+  color: black;
+}
+
+.postconatiner img {
+  height: 60%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.postconatiner h3,
+.postconatiner p {
+  padding: 10px 15px 0 15px;
+  margin: 0;
+}
+.postconatiner h3 {
+  height: 40px;
+}
+
+.greentext {
+  color: #6f7764;
+  text-decoration: underline;
 }
