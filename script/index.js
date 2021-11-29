@@ -35,34 +35,16 @@ async function getProducts() {
         carouselContainer.innerHTML += `
           <div class="carousel-item">
           <div class="row justify-content-around">
-         <div class="card col-5">
-        <img src="${featuredArray[i].image[0].url}" class="card-img-top" alt="${
-          featuredArray[i].image[0].alternativeText
-        }">
+         <div class="card col-12">
+        <img src="${featuredArray[i].image[0].url}" class="card-img-top" alt="${featuredArray[i].image[0].alternativeText}">
         <div class="card-body">
           <h5 class="card-title">${featuredArray[i].title}</h5>
           <p class="card-text">$ ${featuredArray[i].price}</p>
-          <a href="product.html?id=${
-            featuredArray[i].id
-          }" class="btn">Shop now</a>
+          <a href="product.html?id=${featuredArray[i].id}" class="btn">Shop now</a>
           <i class="fas fa-cart-plus add-to-cart"></i>
         </div>
       </div>
-      <div class="card col-5">
-        <img src="${
-          featuredArray[i + 1].image[0].url
-        }" class="card-img-top" alt="${
-          featuredArray[i + 1].image[0].alternativeText
-        }">
-        <div class="card-body">
-          <h5 class="card-title">${featuredArray[i + 1].title}</h5>
-          <p class="card-text">$ ${featuredArray[i + 1].price}</p>
-          <a href="product.html?id=${
-            featuredArray[i + 1].id
-          }" class="btn">Shop now</a>
-          <i class="fas fa-cart-plus add-to-cart"></i>
-        </div>
-      </div>
+      
       </div>
         </div>`;
       }

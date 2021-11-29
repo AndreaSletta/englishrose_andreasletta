@@ -101,109 +101,11 @@ footer .row div form div .form-control {
 }
 
 .carousel .carousel-inner .carousel-item .row .card img {
-  padding: 10px;
+  padding: 5px;
 }
 
-.carouselcontainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-bottom: 30px;
-}
-
-.buttonright,
-.buttonleft {
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 10%;
-  height: 30px;
-  border: none;
-  background-color: transparent;
-}
-
-.buttonleft {
-  height: 10px;
-  width: 10px;
-  background-color: #c30b0b;
-}
-
-.buttonright:hover,
-.buttonleft:hover {
-  cursor: pointer;
-}
-
-.buttonright {
-  height: 10px;
-  width: 10px;
-  background-color: #c30b0b;
-}
-
-.carousel2 {
-  overflow: hidden;
-  width: 70%;
-}
-
-.postconatiner {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  left: 0;
-  margin-left: 0vw;
-  padding: 20px 0;
-}
-
-.postconatiner div {
-  width: 60vw;
-  height: 400px;
-  margin: 0 5vw;
-  -webkit-box-shadow: 0px 3px 6px #b8b8b8;
-          box-shadow: 0px 3px 6px #b8b8b8;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background-color: white;
-}
-
-.postconatiner a {
-  text-decoration: none;
+.carousel button i {
   color: black;
-}
-
-.postconatiner img {
-  height: 60%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.postconatiner h3, .postconatiner .h3,
-.postconatiner p {
-  padding: 10px 15px 0 15px;
-  margin: 0;
-}
-
-.postconatiner h3, .postconatiner .h3 {
-  height: 40px;
-}
-
-.greentext {
-  color: #6f7764;
-  text-decoration: underline;
 }
 
 /*!
