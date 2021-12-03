@@ -94,14 +94,25 @@ footer .row div form div .form-control {
   border: 3px solid #fddfdf;
 }
 
-.carousel .carousel-inner .carousel-item .row .card {
+.carousel .carousel-inner .carousel-item .row .card,
+.shop .container .shop-container .card {
   background-color: #fddfdf;
   border-radius: 0;
   border-color: transparent;
+  padding: 5px;
 }
 
-.carousel .carousel-inner .carousel-item .row .card img {
-  padding: 5px;
+.carousel .carousel-inner .carousel-item .row .card .card-body h5, .carousel .carousel-inner .carousel-item .row .card .card-body .h5,
+.carousel .carousel-inner .carousel-item .row .card .card-body p,
+.carousel .carousel-inner .carousel-item .row .card .card-body a,
+.carousel .carousel-inner .carousel-item .row .card .card-body i,
+.shop .container .shop-container .card .card-body h5,
+.shop .container .shop-container .card .card-body .h5,
+.shop .container .shop-container .card .card-body p,
+.shop .container .shop-container .card .card-body a,
+.shop .container .shop-container .card .card-body i {
+  margin: 0;
+  padding: 0;
 }
 
 .carousel button i {

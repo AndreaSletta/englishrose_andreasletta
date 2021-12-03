@@ -1,10 +1,20 @@
-.carousel .carousel-inner .carousel-item .row {
+.carousel .carousel-inner .carousel-item .row,
+.shop .container .shop-container {
   .card {
     background-color: $primary;
     border-radius: 0;
     border-color: transparent;
+    padding: 5px;
     img {
-      padding: 5px;
+    }
+    .card-body {
+      h5,
+      p,
+      a,
+      i {
+        margin: 0;
+        padding: 0;
+      }
     }
   }
 }

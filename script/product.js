@@ -1,5 +1,9 @@
 import { baseUrl } from "./settings/api.js";
 
+import { getCartProducts } from "./utils/cartFunction.js";
+
+const products = getCartProducts();
+
 const queryString = document.location.search;
 
 const params = new URLSearchParams(queryString);
@@ -21,8 +25,6 @@ async function getProduct() {
     const json = await response.json();
 
     const product = json;
-
-    console.log(product);
 
     document.title = `English rose - ${product.title.slice(0, 15)}`;
 
@@ -46,7 +48,7 @@ async function getProduct() {
     <p>$ ${product.price}</p>
     </div>
     <div class="col">
-      <button type="button" class="btn btn-primary shadow">
+      <button type="button" class="btn btn-primary shadow  add-to-cart">
         Add to cart <i class="fas fa-plus ps-2"></i>
       </button>
     </div>
@@ -70,6 +72,33 @@ async function getProduct() {
   </div>
 </div>
 `;
+
+    // add to cart
+
+    const addToCartBtn = document.querySelector(".add-to-cart");
+
+    function renderContent() {
+      const favButton = addToCartBtn;
+
+      favButton.addEventListener("click", handleClick);
+
+      function handleClick() {
+        const id = this.dataset.id;
+        const title = this.dataset.title;
+
+        const currentProducts = getCartProducts();
+
+        const article = {
+          id: product.id,
+          title: product.title,
+        };
+
+        currentProducts.push(article);
+        console.log(currentProducts);
+        localStorage.setItem("cart", JSON.stringify(currentProducts));
+      }
+    }
+    renderContent();
   } catch (error) {
     console.log(error);
   }
