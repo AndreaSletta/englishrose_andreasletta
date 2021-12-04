@@ -91,6 +91,10 @@ async function getProduct() {
         const article = {
           id: product.id,
           title: product.title,
+          image: product.image[0],
+          image_url: product.image[0].url,
+          price: product.price,
+          featured: product.featured,
         };
 
         currentProducts.push(article);

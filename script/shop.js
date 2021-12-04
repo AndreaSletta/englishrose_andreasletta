@@ -1,7 +1,5 @@
 import { baseUrl } from "./settings/api.js";
 
-import { getCartProducts } from "./utils/cartFunction.js";
-
 const shopContainer = document.querySelector(".shop-container");
 
 async function getProducts() {
