@@ -5,7 +5,12 @@
     border-radius: 0;
     border-color: transparent;
     padding: 5px;
-    img {
+    height: 350px;
+    a img {
+      height: 200px;
+      width: 100%;
+      object-fit: contain;
+      background-color: white;
     }
     .card-body {
       h5,

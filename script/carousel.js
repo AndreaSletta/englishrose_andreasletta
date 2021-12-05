@@ -34,13 +34,13 @@ async function getProducts() {
           <div class="carousel-item">
           <div class="row justify-content-around">
          <div class="card col-8">
+         <a href="product.html?id=${featuredArray[i].id}">
         <img src="${featuredArray[i].image[0].url}" class="card-img-top" alt="${featuredArray[i].image[0].alternativeText}">
         <div class="card-body">
-          <h5 class="card-title">${featuredArray[i].title}</h5>
-          <p class="card-text">$ ${featuredArray[i].price}</p>
-          <a href="product.html?id=${featuredArray[i].id}" class="btn">Shop now</a>
-          <i class="fas fa-cart-plus add-to-cart"></i>
-        </div>
+          <h5 class="card-title text-dark">${featuredArray[i].title}</h5>
+          <p class="card-text text-dark">${featuredArray[i].description}</p>
+          <p class="card-text text-dark">$ ${featuredArray[i].price}</p>
+        </div></a>
       </div>
       </div>
         </div>`;
