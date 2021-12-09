@@ -1,6 +1,9 @@
 .jumbotron .btn,
 .card .card-body .btn {
   background-color: white;
+  &:hover {
+    color: $red;
+  }
 }
 
 footer .row div form div button,

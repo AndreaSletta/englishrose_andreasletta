@@ -1,3 +1,20 @@
+.navbar .container-fluid .navbar-toggler, .navbar .container-sm .navbar-toggler, .navbar .container-md .navbar-toggler, .navbar .container-lg .navbar-toggler, .navbar .container-xl .navbar-toggler, .navbar .container-xxl .navbar-toggler {
+  border: transparent;
+  color: black;
+  padding: 0;
+}
+
+.navbar .container-fluid .navbar-toggler:focus, .navbar .container-sm .navbar-toggler:focus, .navbar .container-md .navbar-toggler:focus, .navbar .container-lg .navbar-toggler:focus, .navbar .container-xl .navbar-toggler:focus, .navbar .container-xxl .navbar-toggler:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.navbar .container-fluid a .fa-shopping-cart, .navbar .container-sm a .fa-shopping-cart, .navbar .container-md a .fa-shopping-cart, .navbar .container-lg a .fa-shopping-cart, .navbar .container-xl a .fa-shopping-cart, .navbar .container-xxl a .fa-shopping-cart {
+  position: absolute;
+  right: 10px;
+  top: 20px;
+}
+
 .navbar .container-fluid .navbar-brand, .navbar .container-sm .navbar-brand, .navbar .container-md .navbar-brand, .navbar .container-lg .navbar-brand, .navbar .container-xl .navbar-brand, .navbar .container-xxl .navbar-brand {
   background-image: url("../../files/logo.svg");
   background-size: contain;
@@ -10,7 +27,7 @@
   top: 12px;
 }
 
-.navbar .container-fluid .navbar-brand :hover, .navbar .container-sm .navbar-brand :hover, .navbar .container-md .navbar-brand :hover, .navbar .container-lg .navbar-brand :hover, .navbar .container-xl .navbar-brand :hover, .navbar .container-xxl .navbar-brand :hover {
+.navbar .container-fluid .navbar-brand:hover, .navbar .container-sm .navbar-brand:hover, .navbar .container-md .navbar-brand:hover, .navbar .container-lg .navbar-brand:hover, .navbar .container-xl .navbar-brand:hover, .navbar .container-xxl .navbar-brand:hover {
   background-image: url("../../files/logo_red.svg");
 }
 
@@ -38,7 +55,16 @@ header .navbar {
 }
 
 .jumbotron img:first-of-type {
-  z-index: 1000;
+  z-index: 1;
+}
+
+/* Media Query for Tablets*/
+/* Media Query for Desktop*/
+@media (min-width: 1024px) {
+  .jumbotron img:last-of-type {
+    left: auto;
+    max-height: 90%;
+  }
 }
 
 body {
@@ -63,6 +89,11 @@ footer .row div a,
 .jumbotron .btn,
 .card .card-body .btn {
   background-color: white;
+}
+
+.jumbotron .btn:hover,
+.card .card-body .btn:hover {
+  color: #c30b0b;
 }
 
 footer .row div form div button,
@@ -107,10 +138,11 @@ footer .row div form div .form-control {
   border-color: transparent;
   padding: 5px;
   height: 350px;
+  width: 200px;
 }
 
-.carousel .carousel-inner .carousel-item .row .card a img,
-.shop .container .shop-container .card a img {
+.carousel .carousel-inner .carousel-item .row .card img,
+.shop .container .shop-container .card img {
   height: 200px;
   width: 100%;
   -o-object-fit: contain;

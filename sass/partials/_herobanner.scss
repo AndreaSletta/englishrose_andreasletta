@@ -15,5 +15,17 @@
 }
 
 .jumbotron img:first-of-type {
-  z-index: 1000;
+  z-index: 1;
+}
+
+/* Media Query for Tablets*/
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+}
+
+/* Media Query for Desktop*/
+@media (min-width: 1024px) {
+  .jumbotron img:last-of-type {
+    left: auto;
+    max-height: 90%;
+  }
 }

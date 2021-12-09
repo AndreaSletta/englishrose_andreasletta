@@ -1,17 +1,33 @@
-.navbar .container-fluid .navbar-brand {
-  background-image: url("../../files/logo.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 80%;
-  height: 35px;
-  position: absolute;
-  margin-left: 10%;
-  top: 12px;
-}
+.navbar .container-fluid {
+  .navbar-toggler {
+    border: transparent;
+    color: black;
+    padding: 0;
 
-.navbar .container-fluid .navbar-brand :hover {
-  background-image: url("../../files/logo_red.svg");
+    &:focus {
+      box-shadow: none;
+    }
+  }
+  a .fa-shopping-cart {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+  }
+
+  .navbar-brand {
+    background-image: url("../../files/logo.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 80%;
+    height: 35px;
+    position: absolute;
+    margin-left: 10%;
+    top: 12px;
+    &:hover {
+      background-image: url("../../files/logo_red.svg");
+    }
+  }
 }
 
 header .navbar {

@@ -76,7 +76,7 @@ async function doLogin(email, password) {
       saveToken(json.jwt);
       saveUser(json.user);
 
-      location.href = "https://sp2-andreaslettalarsen.netlify.app/" + "admin";
+      // location.href = "https://sp2-andreaslettalarsen.netlify.app/" + "admin";
     }
 
     if (json.error) {

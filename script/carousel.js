@@ -28,8 +28,8 @@ async function getProducts() {
 
     /* Add products to index.html carousel */
 
-    for (var i = 0; i < featuredArray.length; i += 2) {
-      if (window.innerWidth < 768) {
+    if (window.innerWidth < 768) {
+      for (var i = 0; i < featuredArray.length; i += 1) {
         carouselContainer.innerHTML += `
           <div class="carousel-item">
           <div class="row justify-content-around">
@@ -44,86 +44,91 @@ async function getProducts() {
       </div>
       </div>
         </div>`;
-      } else if (window.innerWidth > 767 && window.innerWidth < 1024) {
+      }
+    }
+
+    if (window.innerWidth > 767 && window.innerWidth < 1024) {
+      for (var i = 0; i < featuredArray.length; i += 2) {
         carouselContainer.innerHTML += `
       <div class="carousel-item">
       <div class="row justify-content-around">
      <div class="card col-5">
-    <img src="${featuredArray[i].image[0].url}" class="card-img-top" alt="${
+     <a href="product.html?id=${featuredArray[i].id}">
+     <img src="${featuredArray[i].image[0].url}" class="card-img-top" alt="${
           featuredArray[i].image[0].alternativeText
         }">
-    <div class="card-body">
-      <h5 class="card-title">${featuredArray[i].title}</h5>
-      <p class="card-text">$ ${featuredArray[i].price}</p>
-      <a href="product.html?id=${featuredArray[i].id}" class="btn">Shop now</a>
-      <i class="fas fa-cart-plus add-to-cart"></i>
-    </div>
+     <div class="card-body">
+       <h5 class="card-title text-dark">${featuredArray[i].title}</h5>
+       <p class="card-text text-dark">${featuredArray[i].description}</p>
+       <p class="card-text text-dark">$ ${featuredArray[i].price}</p>
+     </div></a>
   </div>
   <div class="card col-5">
-    <img src="${featuredArray[i + 1].image[0].url}" class="card-img-top" alt="${
-          featuredArray[i + 1].image[0].alternativeText
-        }">
-    <div class="card-body">
-      <h5 class="card-title">${featuredArray[i + 1].title}</h5>
-      <p class="card-text">$ ${featuredArray[i + 1].price}</p>
-      <a href="product.html?id=${
-        featuredArray[i + 1].id
-      }" class="btn">Shop now</a>
-      <i class="fas fa-cart-plus add-to-cart"></i>
-    </div>
-  </div>
-  </div>
-    </div>`;
-      } else if (window.innerWidth > 1023) {
-        carouselContainer.innerHTML += `
-      <div class="carousel-item">
-      <div class="row justify-content-around">
-     <div class="card col-3">
-    <img src="${featuredArray[i].image[0].url}" class="card-img-top" alt="${
-          featuredArray[i].image[0].alternativeText
-        }">
-    <div class="card-body">
-      <h5 class="card-title">${featuredArray[i].title}</h5>
-      <p class="card-text">$ ${featuredArray[i].price}</p>
-      <a href="product.html?id=${featuredArray[i].id}" class="btn">Shop now</a>
-      <i class="fas fa-cart-plus add-to-cart"></i>
-    </div>
-  </div>
-  <div class="card col-3">
-    <img src="${featuredArray[i + 1].image[0].url}" class="card-img-top" alt="${
-          featuredArray[i + 1].image[0].alternativeText
-        }">
-    <div class="card-body">
-      <h5 class="card-title">${featuredArray[i + 1].title}</h5>
-      <p class="card-text">$ ${featuredArray[i + 1].price}</p>
-      <a href="product.html?id=${
-        featuredArray[i + 1].id
-      }" class="btn">Shop now</a>
-      <i class="fas fa-cart-plus add-to-cart"></i>
-    </div>
-  </div>
-  <div class="card col-3">
+  <a href="product.html?id=${featuredArray[i + 1].id}">
   <img src="${featuredArray[i + 1].image[0].url}" class="card-img-top" alt="${
           featuredArray[i + 1].image[0].alternativeText
         }">
   <div class="card-body">
-    <h5 class="card-title">${featuredArray[i + 1].title}</h5>
-    <p class="card-text">$ ${featuredArray[i + 1].price}</p>
-    <a href="product.html?id=${
-      featuredArray[i + 1].id
-    }" class="btn addcart">Shop now</a>
-    <i class="fas fa-cart-plus add-to-cart"></i>
+    <h5 class="card-title text-dark">${featuredArray[i + 1].title}</h5>
+    <p class="card-text text-dark">${featuredArray[i + 1].description}</p>
+    <p class="card-text text-dark">$ ${featuredArray[i + 1].price}</p>
+  </div></a>
   </div>
-</div>
   </div>
     </div>`;
       }
-
-      const allFeatured = document.querySelectorAll(".carousel-item");
-      const firstFeatured = allFeatured[0];
-
-      firstFeatured.classList.add("active");
     }
+
+    if (window.innerWidth > 1023) {
+      for (var i = 0; i < featuredArray.length; i += 3) {
+        carouselContainer.innerHTML += `
+      <div class="carousel-item">
+      <div class="row justify-content-around">
+     <div class="card col-3">
+     <a href="product.html?id=${featuredArray[i].id}">
+     <img src="${featuredArray[i].image[0].url}" class="card-img-top" alt="${
+          featuredArray[i].image[0].alternativeText
+        }">
+     <div class="card-body">
+       <h5 class="card-title text-dark">${featuredArray[i].title}</h5>
+       <p class="card-text text-dark">${featuredArray[i].description}</p>
+       <p class="card-text text-dark">$ ${featuredArray[i].price}</p>
+     </div></a>
+  </div>
+  <div class="card col-3">
+  <a href="product.html?id=${featuredArray[i + 1].id}">
+  <img src="${featuredArray[i + 1].image[0].url}" class="card-img-top" alt="${
+          featuredArray[i + 1].image[0].alternativeText
+        }">
+  <div class="card-body">
+    <h5 class="card-title text-dark">${featuredArray[i + 1].title}</h5>
+    <p class="card-text text-dark">${featuredArray[i + 1].description}</p>
+    <p class="card-text text-dark">$ ${featuredArray[i + 1].price}</p>
+  </div></a>
+  </div>
+  <div class="card col-3">
+  <a href="product.html?id=${featuredArray[i + 2].id}">
+        <img src="${
+          featuredArray[i + 2].image[0].url
+        }" class="card-img-top" alt="${
+          featuredArray[i + 2].image[0].alternativeText
+        }">
+        <div class="card-body">
+          <h5 class="card-title text-dark">${featuredArray[i + 2].title}</h5>
+          <p class="card-text text-dark">${featuredArray[i + 2].description}</p>
+          <p class="card-text text-dark">$ ${featuredArray[i + 2].price}</p>
+        </div></a>
+</div>
+
+  </div>
+    </div>`;
+      }
+    }
+
+    const allFeatured = document.querySelectorAll(".carousel-item");
+    const firstFeatured = allFeatured[0];
+
+    firstFeatured.classList.add("active");
   } catch (error) {
     console.log(error);
   }
