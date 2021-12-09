@@ -104,7 +104,7 @@ async function getProducts() {
     <h5 class="card-title text-dark">${featuredArray[i + 1].title}</h5>
     <p class="card-text text-dark">${featuredArray[i + 1].description}</p>
     <p class="card-text text-dark">$ ${featuredArray[i + 1].price}</p>
-  </div></a>
+  </div>
   </div>
   <div class="card col-3">
   <a href="product.html?id=${featuredArray[i + 2].id}">
@@ -119,7 +119,6 @@ async function getProducts() {
           <p class="card-text text-dark">$ ${featuredArray[i + 2].price}</p>
         </div></a>
 </div>
-
   </div>
     </div>`;
       }

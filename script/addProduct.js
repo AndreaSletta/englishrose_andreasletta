@@ -11,7 +11,6 @@ const isFeatured = document.querySelector("#isFeatured");
 const image = document.querySelector("#image");
 const message = document.querySelector("#message");
 
-/*
 form.addEventListener("submit", submitForm);
 
 function submitForm(event) {
@@ -59,43 +58,69 @@ async function addProduct(
   isFeatured,
   image
 ) {
-  const url = baseUrl + "products";
-
-  let imageUrl = [];
-
-  const data = JSON.stringify({
-    title: title,
-    info: info,
-    description: description,
-    ingredients: ingredients,
-    price: price,
-    featured: isFeatured,
-    image: imageUrl.push({ url: [image] }),
-  });
-
-  console.log(imageUrl);
-
+  const uploadUrl = baseUrl + "upload";
   const token = getToken();
+  const productUrl = baseUrl + "products";
 
-  const options = {
-    method: "POST",
-    body: data,
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-  };
-  try {
-    const response = await fetch(url, options);
-    const json = await response.json();
-    console.log(json);
-    console.log(imageUrl);
-  } catch (error) {
-    console.log(error);
-  }
+  fetch(image)
+    .then(response => response.blob())
+    .then(function (myBlob) {
+      const formData = new FormData();
+      formData.append("files", myBlob);
+      console.log(formData);
+
+      fetch(uploadUrl, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`, // <- Don't forget Authorization header if you are using it.
+        },
+        body: formData,
+      })
+        .then(response => response.json())
+        .then(result => {
+          console.log(result);
+
+          const imageId = result[0].id;
+          console.log(imageId);
+
+          //Insert here
+          const data = JSON.stringify({
+            title: title,
+            info: info,
+            description: description,
+            ingredients: ingredients,
+            price: price,
+            featured: isFeatured,
+            image: imageId,
+          });
+
+          const options = {
+            method: "POST",
+            body: data,
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+          };
+          try {
+            fetch(productUrl, options).then(response => {
+              console.log(response);
+            });
+
+            //const json = await response.json();
+            //console.log(json);
+            //console.log(imageUrl);
+          } catch (error) {
+            console.log(error);
+          }
+        })
+        .catch(function (err) {
+          console.log("error:");
+          console.log(err);
+        });
+    });
 }
-*/
-
+/*
 const imageForm = document.querySelector("#form");
 
 const imageInput = document.querySelector("#form>input");
@@ -104,13 +129,56 @@ console.log(imageInput);
 
 imageForm.addEventListener("submit", submitForm);
 
-function submitForm(event) {
-  event.preventDefault();
+//function submitForm(event) {
+//  event.preventDefault();
 
-  const imageValue = imageInput.value.trim();
+//const imageValue = imageInput.files[0];
+//console.log(imageValue.name);
+// addProduct(imageValue);
+//  uploadByUrl();
+//}
+const uploadByUrl = async () => {
+  const url = baseUrl + "upload";
+  const token = getToken();
 
-  addProduct(imageValue);
-}
+  let imageURL =
+    "https://images.unsplash.com/photo-1611095785020-1ba3dd228ea7?ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"; // <- image url
+  fetch(imageURL)
+    .then(response => response.blob())
+    .then(function (myBlob) {
+      const formData = new FormData();
+      formData.append("files", myBlob);
+      console.log(formData);
+      fetch(url, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`, // <- Don't forget Authorization header if you are using it.
+        },
+        body: formData,
+      })
+        .then(response => {
+          const result = response.json();
+          console.log("result", result);
+          const imageId = response.data[0].id;
+          console.log(imageId);
+
+          //Insert here
+          const data = JSON.stringify({
+            title: title,
+            info: info,
+            description: description,
+            ingredients: ingredients,
+            price: price,
+            featured: isFeatured,
+            image: imageId,
+          });
+        })
+        .catch(function (err) {
+          console.log("error:");
+          console.log(err);
+        });
+    });
+};
 
 async function addProduct(imageInput) {
   const url = baseUrl + "upload";
@@ -142,4 +210,4 @@ async function addProduct(imageInput) {
   } catch (error) {
     console.log(error);
   }
-}
+}*/

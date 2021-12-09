@@ -1,7 +1,10 @@
 .navbar .container-fluid .navbar-toggler, .navbar .container-sm .navbar-toggler, .navbar .container-md .navbar-toggler, .navbar .container-lg .navbar-toggler, .navbar .container-xl .navbar-toggler, .navbar .container-xxl .navbar-toggler {
   border: transparent;
-  color: black;
   padding: 0;
+  /*span {
+      background-image: url("../../files/bars.png");
+      transition: all, 0.3s;
+    }*/
 }
 
 .navbar .container-fluid .navbar-toggler:focus, .navbar .container-sm .navbar-toggler:focus, .navbar .container-md .navbar-toggler:focus, .navbar .container-lg .navbar-toggler:focus, .navbar .container-xl .navbar-toggler:focus, .navbar .container-xxl .navbar-toggler:focus {
@@ -13,6 +16,67 @@
   position: absolute;
   right: 10px;
   top: 20px;
+}
+
+.navbar .container-fluid .navbar-toggler, .navbar .container-sm .navbar-toggler, .navbar .container-md .navbar-toggler, .navbar .container-lg .navbar-toggler, .navbar .container-xl .navbar-toggler, .navbar .container-xxl .navbar-toggler {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  cursor: pointer;
+  height: 40px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 30px;
+  right: 5vw;
+  z-index: 10;
+}
+
+.navbar .container-fluid span, .navbar .container-sm span, .navbar .container-md span, .navbar .container-lg span, .navbar .container-xl span, .navbar .container-xxl span {
+  height: 2pt;
+  width: 100%;
+  background-color: #000000;
+  border-radius: 1pt;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-shadow: 0px 3px 6px #b8b8b8;
+          box-shadow: 0px 3px 6px #b8b8b8;
+  -webkit-transition: all, 0.5s;
+  transition: all, 0.5s;
+}
+
+.navbar .container-fluid .navbar-toggler:hover .span2, .navbar .container-sm .navbar-toggler:hover .span2, .navbar .container-md .navbar-toggler:hover .span2, .navbar .container-lg .navbar-toggler:hover .span2, .navbar .container-xl .navbar-toggler:hover .span2, .navbar .container-xxl .navbar-toggler:hover .span2 {
+  width: 0;
+}
+
+.navbar .container-fluid .navbar-toggler:hover .span1, .navbar .container-sm .navbar-toggler:hover .span1, .navbar .container-md .navbar-toggler:hover .span1, .navbar .container-lg .navbar-toggler:hover .span1, .navbar .container-xl .navbar-toggler:hover .span1, .navbar .container-xxl .navbar-toggler:hover .span1 {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  top: 10px;
+  background-color: #c30b0b;
+}
+
+.navbar .container-fluid .span1, .navbar .container-sm .span1, .navbar .container-md .span1, .navbar .container-lg .span1, .navbar .container-xl .span1, .navbar .container-xxl .span1 {
+  top: 0;
+}
+
+.navbar .container-fluid .span3, .navbar .container-sm .span3, .navbar .container-md .span3, .navbar .container-lg .span3, .navbar .container-xl .span3, .navbar .container-xxl .span3 {
+  bottom: 0;
+}
+
+.navbar .container-fluid .navbar-toggler:hover .span3, .navbar .container-sm .navbar-toggler:hover .span3, .navbar .container-md .navbar-toggler:hover .span3, .navbar .container-lg .navbar-toggler:hover .span3, .navbar .container-xl .navbar-toggler:hover .span3, .navbar .container-xxl .navbar-toggler:hover .span3 {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  bottom: 10px;
+  background-color: #c30b0b;
 }
 
 .navbar .container-fluid .navbar-brand, .navbar .container-sm .navbar-brand, .navbar .container-md .navbar-brand, .navbar .container-lg .navbar-brand, .navbar .container-xl .navbar-brand, .navbar .container-xxl .navbar-brand {
@@ -165,6 +229,28 @@ footer .row div form div .form-control {
 
 .carousel button i {
   color: black;
+}
+
+.padding {
+  padding: 5vw;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Media Query for Tablets*/
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .carousel-item .row {
+    width: 70%;
+    margin: auto;
+  }
+}
+
+/* Media Query for Desktop*/
+@media (min-width: 1024px) {
+  .carousel-item .row {
+    width: 70%;
+    margin: auto;
+  }
 }
 
 /*!

@@ -1,3 +1,24 @@
 .carousel button i {
   color: black;
 }
+
+.padding {
+  padding: 5vw;
+  padding-left: 0;
+  padding-right: 0;
+}
+/* Media Query for Tablets*/
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .carousel-item .row {
+    width: 70%;
+    margin: auto;
+  }
+}
+
+/* Media Query for Desktop*/
+@media (min-width: 1024px) {
+  .carousel-item .row {
+    width: 70%;
+    margin: auto;
+  }
+}
