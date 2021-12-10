@@ -3,9 +3,8 @@ header .navbar {
   padding-bottom: 10px;
   z-index: 10;
   .container-fluid {
-    .collapse {
-      font-family: $font-family-serif;
-    }
+    font-family: $font-family-serif;
+
     .navbar-toggler {
       border: transparent;
       padding: 0;

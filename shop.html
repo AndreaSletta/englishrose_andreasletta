@@ -26,6 +26,8 @@
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
+            <!--<span class="navbar-toggler-icon"></span>-->
+
             <span class="span1"></span>
             <span class="span2"></span>
             <span class="span3"></span>
@@ -47,7 +49,9 @@
             </ul>
           </div>
 
-          <a href="cart.html"> <i class="fas fa-shopping-cart"></i></a>
+          <a href="cart.html">
+            <i class="fas fa-shopping-cart text-dark"></i
+          ></a>
 
           <a class="navbar-brand" id="logobutton" href="index.html"></a>
         </div>
@@ -63,17 +67,17 @@
         </nav>
       </div>
       <div class="container bg-primary">
-        <h1>Shop</h1>
+        <h1 class="py-3">Shop</h1>
       </div>
       <div class="container shop">
         <div>
           <form>
-            <div class="mb-3">
+            <div class="mb-3 mt-4">
               <label for="search" class="form-label d-none">Search</label>
               <input type="text" class="form-control shadow" id="search" />
             </div>
           </form>
-          <div class="dropdown">
+          <div class="dropdown mb-4">
             <button
               class="btn btn-primary dropdown-toggle"
               type="button"
@@ -81,23 +85,17 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              Dropdown button
+              Default
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="#">Default</a></li>
+              <li><a class="dropdown-item" href="#">Price</a></li>
+              <li><a class="dropdown-item" href="#">Newest</a></li>
             </ul>
           </div>
         </div>
         <div class="container">
-          <div class="row shop-container justify-content-center">
-            <!--
-            <div class="col-6">col-8</div>
-            <div class="col-6">col-4</div>
-            <div class="col-6">col-8</div>
-            <div class="col-6">col-4</div> -->
-          </div>
+          <div class="shop-container"></div>
         </div>
       </div>
     </main>

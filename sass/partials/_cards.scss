@@ -1,5 +1,4 @@
-.carousel .carousel-inner .carousel-item .row,
-.shop .container .shop-container {
+.carousel .carousel-inner .carousel-item .row {
   .card {
     background-color: $primary;
     border-radius: 0;
@@ -7,8 +6,38 @@
     padding: 5px;
     height: 350px;
     width: 200px;
+    a {
+      padding: 0;
+    }
     img {
       height: 200px;
+      width: 100%;
+      object-fit: contain;
+      background-color: white;
+    }
+    .card-body {
+      h5,
+      p,
+      a,
+      i {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}
+
+.shop .container .shop-container {
+  .card {
+    background-color: $primary;
+    border-radius: 0;
+    border-color: transparent;
+    padding: 5px;
+    a {
+      padding: 0;
+    }
+    img {
+      height: 150px;
       width: 100%;
       object-fit: contain;
       background-color: white;

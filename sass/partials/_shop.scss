@@ -1,4 +1,22 @@
-.shop div form div input {
-  border-radius: 0;
-  border: 3px solid $primary;
+.shop {
+  div form div input {
+    border-radius: 0;
+    border: 3px solid $primary;
+  }
+  .container {
+    padding: 0;
+    .shop-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 30px;
+    }
+  }
+}
+
+/* Media Query for Tablets*/
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+}
+
+/* Media Query for Desktop*/
+@media (min-width: 1024px) {
 }

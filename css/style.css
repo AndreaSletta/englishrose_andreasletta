@@ -4,7 +4,7 @@ header .navbar {
   z-index: 10;
 }
 
-header .navbar .container-fluid .collapse, header .navbar .container-sm .collapse, header .navbar .container-md .collapse, header .navbar .container-lg .collapse, header .navbar .container-xl .collapse, header .navbar .container-xxl .collapse {
+header .navbar .container-fluid, header .navbar .container-sm, header .navbar .container-md, header .navbar .container-lg, header .navbar .container-xl, header .navbar .container-xxl {
   font-family: monarcha, serif;
 }
 
@@ -187,13 +187,6 @@ header .navbar .navbar-brand:hover {
 body {
   font-weight: 400;
   font-style: normal;
-  min-height: 100vh;
-  /* mobile viewport bug fix */
-  min-height: -webkit-fill-available;
-}
-
-html {
-  height: -webkit-fill-available;
 }
 
 .text-red {
@@ -347,8 +340,21 @@ footer .footerWrap .row .col-10 .row .col-4 {
   border: 3px solid #fddfdf;
 }
 
-.carousel .carousel-inner .carousel-item .row .card,
-.shop .container .shop-container .card {
+.shop .container {
+  padding: 0;
+}
+
+.shop .container .shop-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+}
+
+/* Media Query for Tablets*/
+/* Media Query for Desktop*/
+.carousel .carousel-inner .carousel-item .row .card {
   background-color: #fddfdf;
   border-radius: 0;
   border-color: transparent;
@@ -357,8 +363,11 @@ footer .footerWrap .row .col-10 .row .col-4 {
   width: 200px;
 }
 
-.carousel .carousel-inner .carousel-item .row .card img,
-.shop .container .shop-container .card img {
+.carousel .carousel-inner .carousel-item .row .card a {
+  padding: 0;
+}
+
+.carousel .carousel-inner .carousel-item .row .card img {
   height: 200px;
   width: 100%;
   -o-object-fit: contain;
@@ -369,9 +378,31 @@ footer .footerWrap .row .col-10 .row .col-4 {
 .carousel .carousel-inner .carousel-item .row .card .card-body h5, .carousel .carousel-inner .carousel-item .row .card .card-body .h5,
 .carousel .carousel-inner .carousel-item .row .card .card-body p,
 .carousel .carousel-inner .carousel-item .row .card .card-body a,
-.carousel .carousel-inner .carousel-item .row .card .card-body i,
-.shop .container .shop-container .card .card-body h5,
-.shop .container .shop-container .card .card-body .h5,
+.carousel .carousel-inner .carousel-item .row .card .card-body i {
+  margin: 0;
+  padding: 0;
+}
+
+.shop .container .shop-container .card {
+  background-color: #fddfdf;
+  border-radius: 0;
+  border-color: transparent;
+  padding: 5px;
+}
+
+.shop .container .shop-container .card a {
+  padding: 0;
+}
+
+.shop .container .shop-container .card img {
+  height: 150px;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-color: white;
+}
+
+.shop .container .shop-container .card .card-body h5, .shop .container .shop-container .card .card-body .h5,
 .shop .container .shop-container .card .card-body p,
 .shop .container .shop-container .card .card-body a,
 .shop .container .shop-container .card .card-body i {

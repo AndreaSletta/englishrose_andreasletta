@@ -16,14 +16,12 @@ async function getProducts() {
     productList.forEach(product => {
       /* Add products to shop.html */
       shopContainer.innerHTML += `
-      <div class="card col-10">
+      <div class="card">
       <a href="product.html?id=${product.id}" class="btn">
       <img src="${product.image[0].url}" class="card-img-top" alt="${product.image[0].alternativeText}">
       <div class="card-body">
     <h5 class="card-title">${product.title}</h5>
     <p class="card-text">$ ${product.price}</p>
-  
-    <i class="fas fa-cart-plus add-to-cart"></i>
   </div> </a> </div>`;
     });
   } catch (error) {
