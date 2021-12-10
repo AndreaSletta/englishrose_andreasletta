@@ -15,8 +15,9 @@ async function getHeroImage() {
 
     for (var i = 0; i < images.length; i++) {
       if (images[i].name === "herobanner.gif") {
+        console.log(images[i]);
         jumbotron.innerHTML += `<img
-            src="files/temporaryyyyyyyyyyyy.png"
+        src="${images[i].url}" 
             class="img-fluid"
             alt="Makup items spread around"
           />`;

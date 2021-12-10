@@ -1,24 +1,16 @@
-.navbar .container-fluid .navbar-toggler, .navbar .container-sm .navbar-toggler, .navbar .container-md .navbar-toggler, .navbar .container-lg .navbar-toggler, .navbar .container-xl .navbar-toggler, .navbar .container-xxl .navbar-toggler {
+header .navbar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  z-index: 10;
+}
+
+header .navbar .container-fluid .collapse, header .navbar .container-sm .collapse, header .navbar .container-md .collapse, header .navbar .container-lg .collapse, header .navbar .container-xl .collapse, header .navbar .container-xxl .collapse {
+  font-family: monarcha, serif;
+}
+
+header .navbar .container-fluid .navbar-toggler, header .navbar .container-sm .navbar-toggler, header .navbar .container-md .navbar-toggler, header .navbar .container-lg .navbar-toggler, header .navbar .container-xl .navbar-toggler, header .navbar .container-xxl .navbar-toggler {
   border: transparent;
   padding: 0;
-  /*span {
-      background-image: url("../../files/bars.png");
-      transition: all, 0.3s;
-    }*/
-}
-
-.navbar .container-fluid .navbar-toggler:focus, .navbar .container-sm .navbar-toggler:focus, .navbar .container-md .navbar-toggler:focus, .navbar .container-lg .navbar-toggler:focus, .navbar .container-xl .navbar-toggler:focus, .navbar .container-xxl .navbar-toggler:focus {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.navbar .container-fluid a .fa-shopping-cart, .navbar .container-sm a .fa-shopping-cart, .navbar .container-md a .fa-shopping-cart, .navbar .container-lg a .fa-shopping-cart, .navbar .container-xl a .fa-shopping-cart, .navbar .container-xxl a .fa-shopping-cart {
-  position: absolute;
-  right: 10px;
-  top: 20px;
-}
-
-.navbar .container-fluid .navbar-toggler, .navbar .container-sm .navbar-toggler, .navbar .container-md .navbar-toggler, .navbar .container-lg .navbar-toggler, .navbar .container-xl .navbar-toggler, .navbar .container-xxl .navbar-toggler {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,7 +22,7 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   cursor: pointer;
-  height: 40px;
+  height: 37px;
   padding-top: 8px;
   padding-bottom: 8px;
   width: 30px;
@@ -38,67 +30,123 @@
   z-index: 10;
 }
 
-.navbar .container-fluid span, .navbar .container-sm span, .navbar .container-md span, .navbar .container-lg span, .navbar .container-xl span, .navbar .container-xxl span {
+header .navbar .container-fluid .navbar-toggler:focus, header .navbar .container-sm .navbar-toggler:focus, header .navbar .container-md .navbar-toggler:focus, header .navbar .container-lg .navbar-toggler:focus, header .navbar .container-xl .navbar-toggler:focus, header .navbar .container-xxl .navbar-toggler:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+header .navbar .container-fluid a .fa-shopping-cart, header .navbar .container-sm a .fa-shopping-cart, header .navbar .container-md a .fa-shopping-cart, header .navbar .container-lg a .fa-shopping-cart, header .navbar .container-xl a .fa-shopping-cart, header .navbar .container-xxl a .fa-shopping-cart {
+  position: absolute;
+  right: 0.75rem;
+  top: 20px;
+  font-size: 20px;
+  -webkit-transition: all, 0.3s;
+  transition: all, 0.3s;
+}
+
+header .navbar .container-fluid a .fa-shopping-cart:hover, header .navbar .container-sm a .fa-shopping-cart:hover, header .navbar .container-md a .fa-shopping-cart:hover, header .navbar .container-lg a .fa-shopping-cart:hover, header .navbar .container-xl a .fa-shopping-cart:hover, header .navbar .container-xxl a .fa-shopping-cart:hover {
+  color: #c30b0b !important;
+}
+
+header .navbar span {
   height: 2pt;
   width: 100%;
-  background-color: #000000;
+  background-color: black;
   border-radius: 1pt;
   position: relative;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-shadow: 0px 3px 6px #b8b8b8;
-          box-shadow: 0px 3px 6px #b8b8b8;
-  -webkit-transition: all, 0.5s;
-  transition: all, 0.5s;
+  -webkit-transition: all, 0.3s;
+  transition: all, 0.3s;
 }
 
-.navbar .container-fluid .navbar-toggler:hover .span2, .navbar .container-sm .navbar-toggler:hover .span2, .navbar .container-md .navbar-toggler:hover .span2, .navbar .container-lg .navbar-toggler:hover .span2, .navbar .container-xl .navbar-toggler:hover .span2, .navbar .container-xxl .navbar-toggler:hover .span2 {
+header .navbar .navbar-toggler[aria-expanded="true"] .span2 {
   width: 0;
 }
 
-.navbar .container-fluid .navbar-toggler:hover .span1, .navbar .container-sm .navbar-toggler:hover .span1, .navbar .container-md .navbar-toggler:hover .span1, .navbar .container-lg .navbar-toggler:hover .span1, .navbar .container-xl .navbar-toggler:hover .span1, .navbar .container-xxl .navbar-toggler:hover .span1 {
+header .navbar .navbar-toggler[aria-expanded="true"] .span1 {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
-  top: 10px;
+  top: 9px;
   background-color: #c30b0b;
 }
 
-.navbar .container-fluid .span1, .navbar .container-sm .span1, .navbar .container-md .span1, .navbar .container-lg .span1, .navbar .container-xl .span1, .navbar .container-xxl .span1 {
+header .navbar .span1 {
   top: 0;
 }
 
-.navbar .container-fluid .span3, .navbar .container-sm .span3, .navbar .container-md .span3, .navbar .container-lg .span3, .navbar .container-xl .span3, .navbar .container-xxl .span3 {
+header .navbar .span3 {
   bottom: 0;
 }
 
-.navbar .container-fluid .navbar-toggler:hover .span3, .navbar .container-sm .navbar-toggler:hover .span3, .navbar .container-md .navbar-toggler:hover .span3, .navbar .container-lg .navbar-toggler:hover .span3, .navbar .container-xl .navbar-toggler:hover .span3, .navbar .container-xxl .navbar-toggler:hover .span3 {
+header .navbar .navbar-toggler[aria-expanded="true"] .span3 {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-  bottom: 10px;
+  bottom: 9px;
   background-color: #c30b0b;
 }
 
-.navbar .container-fluid .navbar-brand, .navbar .container-sm .navbar-brand, .navbar .container-md .navbar-brand, .navbar .container-lg .navbar-brand, .navbar .container-xl .navbar-brand, .navbar .container-xxl .navbar-brand {
+header .navbar .navbar-brand {
   background-image: url("../../files/logo.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  width: 80%;
-  height: 35px;
+  width: 70%;
+  height: 25px;
+  margin-left: 15%;
+  top: 17px;
+  left: 0;
   position: absolute;
-  margin-left: 10%;
-  top: 12px;
 }
 
-.navbar .container-fluid .navbar-brand:hover, .navbar .container-sm .navbar-brand:hover, .navbar .container-md .navbar-brand:hover, .navbar .container-lg .navbar-brand:hover, .navbar .container-xl .navbar-brand:hover, .navbar .container-xxl .navbar-brand:hover {
+header .navbar .navbar-brand:hover {
   background-image: url("../../files/logo_red.svg");
 }
 
-header .navbar {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  z-index: 10;
+/* Media Query for Tablets*/
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  header .navbar .container-fluid, header .navbar .container-sm, header .navbar .container-md, header .navbar .container-lg, header .navbar .container-xl, header .navbar .container-xxl {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+/* Media Query for Desktop*/
+@media (min-width: 1024px) {
+  header .navbar .container-fluid, header .navbar .container-sm, header .navbar .container-md, header .navbar .container-lg, header .navbar .container-xl, header .navbar .container-xxl {
+    width: 90%;
+    margin: auto;
+  }
+  header .navbar .container-fluid a .fa-shopping-cart, header .navbar .container-sm a .fa-shopping-cart, header .navbar .container-md a .fa-shopping-cart, header .navbar .container-lg a .fa-shopping-cart, header .navbar .container-xl a .fa-shopping-cart, header .navbar .container-xxl a .fa-shopping-cart {
+    top: 20px;
+    right: 20px;
+  }
+  header .navbar .container-fluid .collapse, header .navbar .container-sm .collapse, header .navbar .container-md .collapse, header .navbar .container-lg .collapse, header .navbar .container-xl .collapse, header .navbar .container-xxl .collapse {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 40px;
+  }
+  header .navbar .container-fluid .collapse ul, header .navbar .container-sm .collapse ul, header .navbar .container-md .collapse ul, header .navbar .container-lg .collapse ul, header .navbar .container-xl .collapse ul, header .navbar .container-xxl .collapse ul {
+    width: 240px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  header .navbar .container-fluid .collapse ul .nav-item .active, header .navbar .container-sm .collapse ul .nav-item .active, header .navbar .container-md .collapse ul .nav-item .active, header .navbar .container-lg .collapse ul .nav-item .active, header .navbar .container-xl .collapse ul .nav-item .active, header .navbar .container-xxl .collapse ul .nav-item .active {
+    text-decoration: underline;
+  }
+  header .navbar .container-fluid .collapse ul .nav-item a, header .navbar .container-sm .collapse ul .nav-item a, header .navbar .container-md .collapse ul .nav-item a, header .navbar .container-lg .collapse ul .nav-item a, header .navbar .container-xl .collapse ul .nav-item a, header .navbar .container-xxl .collapse ul .nav-item a {
+    color: black;
+    padding: 0;
+  }
+  header .navbar .container-fluid .collapse ul .nav-item a:hover, header .navbar .container-sm .collapse ul .nav-item a:hover, header .navbar .container-md .collapse ul .nav-item a:hover, header .navbar .container-lg .collapse ul .nav-item a:hover, header .navbar .container-xl .collapse ul .nav-item a:hover, header .navbar .container-xxl .collapse ul .nav-item a:hover {
+    color: #c30b0b;
+  }
+  header .navbar .container-fluid .navbar-toggler, header .navbar .container-sm .navbar-toggler, header .navbar .container-md .navbar-toggler, header .navbar .container-lg .navbar-toggler, header .navbar .container-xl .navbar-toggler, header .navbar .container-xxl .navbar-toggler {
+    display: none;
+  }
 }
 
 .jumbotron {
@@ -111,15 +159,17 @@ header .navbar {
   padding: 50px;
 }
 
-.jumbotron img {
+.jumbotron img,
+.jumbotron a img {
   position: absolute;
   left: 0;
   bottom: 0;
   right: 0;
 }
 
-.jumbotron img:first-of-type {
+.jumbotron a img:first-of-type {
   z-index: 1;
+  width: 70px;
 }
 
 /* Media Query for Tablets*/
@@ -128,6 +178,9 @@ header .navbar {
   .jumbotron img:last-of-type {
     left: auto;
     max-height: 90%;
+  }
+  .jumbotron a img:first-of-type {
+    left: 0;
   }
 }
 
@@ -172,6 +225,10 @@ footer {
 
 footer .row div {
   text-align: center;
+}
+
+footer .row div a:hover {
+  text-decoration: underline;
 }
 
 footer .row div img {

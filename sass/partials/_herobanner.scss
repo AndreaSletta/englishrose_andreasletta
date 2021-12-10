@@ -7,15 +7,17 @@
   padding: 50px;
 }
 
-.jumbotron img {
+.jumbotron img,
+.jumbotron a img {
   position: absolute;
   left: 0;
   bottom: 0;
   right: 0;
 }
 
-.jumbotron img:first-of-type {
+.jumbotron a img:first-of-type {
   z-index: 1;
+  width: 70px;
 }
 
 /* Media Query for Tablets*/
@@ -27,5 +29,8 @@
   .jumbotron img:last-of-type {
     left: auto;
     max-height: 90%;
+  }
+  .jumbotron a img:first-of-type {
+    left: 0;
   }
 }
