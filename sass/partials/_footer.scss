@@ -1,10 +1,83 @@
-footer .row div form div {
-  display: flex;
-  flex-direction: row;
+footer {
+  font-size: 12px;
+  .row div {
+    text-align: center;
+    img {
+      max-width: 200px;
+    }
+    i {
+      font-size: 16px;
+      &:hover {
+        color: $red;
+      }
+    }
+    form div {
+      display: flex;
+      flex-direction: row;
+      input {
+        border: solid black 2px;
+        border-radius: 0;
+        font-size: 12px;
+      }
+      button {
+        font-size: 12px;
+        white-space: nowrap;
+        border: solid black 2px;
+        &:hover {
+          background-color: $red;
+        }
+      }
+    }
+  }
+
+  footer .row div form div .form-control {
+    width: auto;
+    border-radius: 0;
+    border: 3px solid black;
+  }
+
+  footer {
+    max-width: 100vw;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .footerWrap {
+    padding-top: 20px;
+    .row .col-10 .row .col-4 {
+      text-align: center;
+    }
+  }
 }
 
-footer .row div form div .form-control {
-  width: auto;
-  border-radius: 0;
-  border: 3px solid black;
+/* Media Query for Tablets*/
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  footer {
+    .footerWrap {
+      display: flex;
+      flex-direction: row;
+      .row .text-left {
+        text-align: right !important;
+      }
+    }
+    .row div {
+      text-align: left;
+    }
+  }
+}
+
+/* Media Query for Desktop*/
+@media (min-width: 1024px) {
+  footer {
+    .footerWrap {
+      display: flex;
+      flex-direction: row;
+      .row .text-left {
+        text-align: right !important;
+      }
+    }
+    .row div {
+      text-align: left;
+    }
+  }
 }

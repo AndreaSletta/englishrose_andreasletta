@@ -166,6 +166,26 @@ footer .row div form div button,
   border-radius: 0;
 }
 
+footer {
+  font-size: 12px;
+}
+
+footer .row div {
+  text-align: center;
+}
+
+footer .row div img {
+  max-width: 200px;
+}
+
+footer .row div i {
+  font-size: 16px;
+}
+
+footer .row div i:hover {
+  color: #c30b0b;
+}
+
 footer .row div form div {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -176,10 +196,78 @@ footer .row div form div {
           flex-direction: row;
 }
 
-footer .row div form div .form-control {
+footer .row div form div input {
+  border: solid black 2px;
+  border-radius: 0;
+  font-size: 12px;
+}
+
+footer .row div form div button {
+  font-size: 12px;
+  white-space: nowrap;
+  border: solid black 2px;
+}
+
+footer .row div form div button:hover {
+  background-color: #c30b0b;
+}
+
+footer footer .row div form div .form-control {
   width: auto;
   border-radius: 0;
   border: 3px solid black;
+}
+
+footer footer {
+  max-width: 100vw;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+footer .footerWrap {
+  padding-top: 20px;
+}
+
+footer .footerWrap .row .col-10 .row .col-4 {
+  text-align: center;
+}
+
+/* Media Query for Tablets*/
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  footer .footerWrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  footer .footerWrap .row .text-left {
+    text-align: right !important;
+  }
+  footer .row div {
+    text-align: left;
+  }
+}
+
+/* Media Query for Desktop*/
+@media (min-width: 1024px) {
+  footer .footerWrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  footer .footerWrap .row .text-left {
+    text-align: right !important;
+  }
+  footer .row div {
+    text-align: left;
+  }
 }
 
 .clear-navbar {
