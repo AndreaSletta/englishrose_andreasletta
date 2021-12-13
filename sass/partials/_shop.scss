@@ -15,8 +15,18 @@
 
 /* Media Query for Tablets*/
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .shop {
+    .container .shop-container {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
 }
 
 /* Media Query for Desktop*/
 @media (min-width: 1024px) {
+  .shop {
+    .container .shop-container {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
 }

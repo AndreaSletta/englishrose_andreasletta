@@ -27,13 +27,14 @@ async function getProducts() {
     console.log(featuredArray);
 
     /* Add products to index.html carousel */
+    featuredArray.length = 8;
 
     if (window.innerWidth < 768) {
       for (var i = 0; i < featuredArray.length; i += 1) {
         carouselContainer.innerHTML += `
           <div class="carousel-item">
           <div class="row justify-content-around">
-         <div class="card col-8">
+         <div class="card shadow col-8">
          <a href="product.html?id=${featuredArray[i].id}">
         <img src="${featuredArray[i].image[0].url}" class="card-img-top" alt="${featuredArray[i].image[0].alternativeText}">
         <div class="card-body">
@@ -52,7 +53,7 @@ async function getProducts() {
         carouselContainer.innerHTML += `
       <div class="carousel-item">
       <div class="row justify-content-around">
-     <div class="card col-5">
+     <div class="card shadow col-5">
      <a href="product.html?id=${featuredArray[i].id}">
      <img src="${featuredArray[i].image[0].url}" class="card-img-top" alt="${
           featuredArray[i].image[0].alternativeText
@@ -63,7 +64,7 @@ async function getProducts() {
        <p class="card-text text-dark">$ ${featuredArray[i].price}</p>
      </div></a>
   </div>
-  <div class="card col-5">
+  <div class="card shadow col-5">
   <a href="product.html?id=${featuredArray[i + 1].id}">
   <img src="${featuredArray[i + 1].image[0].url}" class="card-img-top" alt="${
           featuredArray[i + 1].image[0].alternativeText
@@ -84,7 +85,7 @@ async function getProducts() {
         carouselContainer.innerHTML += `
       <div class="carousel-item">
       <div class="row justify-content-around">
-     <div class="card col-3">
+     <div class="card shadow col-3">
      <a href="product.html?id=${featuredArray[i].id}">
      <img src="${featuredArray[i].image[0].url}" class="card-img-top" alt="${
           featuredArray[i].image[0].alternativeText
@@ -95,7 +96,7 @@ async function getProducts() {
        <p class="card-text text-dark">$ ${featuredArray[i].price}</p>
      </div></a>
   </div>
-  <div class="card col-3">
+  <div class="card  shadow col-3">
   <a href="product.html?id=${featuredArray[i + 1].id}">
   <img src="${featuredArray[i + 1].image[0].url}" class="card-img-top" alt="${
           featuredArray[i + 1].image[0].alternativeText
@@ -106,7 +107,7 @@ async function getProducts() {
     <p class="card-text text-dark">$ ${featuredArray[i + 1].price}</p>
   </div>
   </div>
-  <div class="card col-3">
+  <div class="card shadow col-3">
   <a href="product.html?id=${featuredArray[i + 2].id}">
         <img src="${
           featuredArray[i + 2].image[0].url

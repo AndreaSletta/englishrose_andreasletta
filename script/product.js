@@ -33,13 +33,13 @@ async function getProduct() {
     productContainer.innerHTML = `
 <div class="row">
   <div class="col-12">
-  <img src="${product.image[0].url}" class="img-fluid" alt="${product.image[0].alternativeText}">
+  <img src="${product.image[0].url}" class="img-fluid shadow" alt="${product.image[0].alternativeText}">
   </div>
 </div>
 <div class="row">
-  <div class="col-12 p-0">
+  <div class="col-12 p-0 m-0 ">
     <div class="container bg-primary">
-      <h1 class="py-3 text-center">${product.title}</h1>
+      <h1 class="py-3 text-center ">${product.title}</h1>
     </div>
   </div>
   <div class="row col-12">
@@ -48,7 +48,7 @@ async function getProduct() {
     <p>$ ${product.price}</p>
     </div>
     <div class="col">
-      <button type="button" class="btn btn-primary shadow  add-to-cart">
+      <button type="button" class="btn btn-white border-secondary shadow  add-to-cart">
         Add to cart <i class="fas fa-plus ps-2"></i>
       </button>
     </div>
