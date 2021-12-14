@@ -27,7 +27,8 @@
   }
 }
 
-.shop .container .shop-container {
+.shop .container .shop-container,
+.container .shop-container {
   .card {
     background-color: $primary;
     border-radius: 0;
@@ -56,4 +57,9 @@
       }
     }
   }
+}
+
+.container .shop-container .card {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }

@@ -1,14 +1,20 @@
 .shop {
-  div form div input {
-    border-radius: 0;
-    border: 3px solid $primary;
+  div {
+    .dropdown button {
+      width: 160px;
+    }
+
+    form div input {
+      border-radius: 0;
+      border: 3px solid $primary;
+    }
   }
   .container {
     padding: 0;
     .shop-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-gap: 30px;
+      grid-gap: 60px 30px;
     }
   }
 }
@@ -16,6 +22,17 @@
 /* Media Query for Tablets*/
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .shop {
+    div {
+      form {
+        order: 2;
+      }
+      .dropdown {
+        order: 1;
+        button {
+          border: 3px solid $primary;
+        }
+      }
+    }
     .container .shop-container {
       grid-template-columns: 1fr 1fr 1fr;
     }
@@ -25,6 +42,17 @@
 /* Media Query for Desktop*/
 @media (min-width: 1024px) {
   .shop {
+    div {
+      form {
+        order: 2;
+      }
+      .dropdown {
+        order: 1;
+        button {
+          border: 3px solid $primary;
+        }
+      }
+    }
     .container .shop-container {
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }

@@ -3,7 +3,7 @@ import { getToken } from "../utils/storage.js";
 
 export function deleteButton(id) {
   const container = document.querySelector(".deleteContainer");
-  container.innerHTML = `<button type="button" class="delete">Delete </button>`;
+  container.innerHTML = `<button type="button" class="delete btn btn-primary">Delete </button>`;
 
   const button = document.querySelector("button.delete");
   button.onclick = async function () {
@@ -28,7 +28,7 @@ export function deleteButton(id) {
         const response = await fetch(url, options);
         const json = await response.json();
         console.log(json);
-        location.href = "/";
+        location.href = "/admin.html";
       } catch (error) {
         console.log(error);
       }

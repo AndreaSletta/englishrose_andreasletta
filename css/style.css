@@ -213,10 +213,39 @@ footer .row div a,
   color: #c30b0b;
 }
 
+.jumbotron .btn a,
+.card .card-body .btn a {
+  text-decoration: none;
+  color: black;
+}
+
 footer .row div form div button,
 .container .row div button,
 .card .card-body .btn {
   border-radius: 0;
+}
+
+.shop div .dropdown .btn {
+  border-radius: 0px;
+}
+
+.shop div .dropdown .dropdown-menu {
+  border: 0px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0px;
+}
+
+.shop div .dropdown li button {
+  border: none;
+  background-color: white;
+}
+
+#welcome-container div .btn a {
+  text-decoration: none;
+  color: black;
+}
+
+#welcome-container div .btn a:hover {
+  color: #c30b0b;
 }
 
 footer {
@@ -335,8 +364,15 @@ footer .footerWrap .row .col-10 .row .col-4 {
   padding: 10vw;
 }
 
-.maxwidth {
-  width: 100vw;
+/* Media Query for Desktop*/
+@media (min-width: 1024px) {
+  .clear-navbar {
+    padding-top: 100px;
+  }
+}
+
+.shop div .dropdown button {
+  width: 160px;
 }
 
 .shop div form div input {
@@ -353,11 +389,24 @@ footer .footerWrap .row .col-10 .row .col-4 {
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  grid-gap: 30px;
+  grid-gap: 60px 30px;
 }
 
 /* Media Query for Tablets*/
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .shop div form {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .shop div .dropdown {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .shop div .dropdown button {
+    border: 3px solid #fddfdf;
+  }
   .shop .container .shop-container {
     -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
@@ -366,6 +415,19 @@ footer .footerWrap .row .col-10 .row .col-4 {
 
 /* Media Query for Desktop*/
 @media (min-width: 1024px) {
+  .shop div form {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .shop div .dropdown {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .shop div .dropdown button {
+    border: 3px solid #fddfdf;
+  }
   .shop .container .shop-container {
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -401,18 +463,21 @@ footer .footerWrap .row .col-10 .row .col-4 {
   padding: 0;
 }
 
-.shop .container .shop-container .card {
+.shop .container .shop-container .card,
+.container .shop-container .card {
   background-color: #fddfdf;
   border-radius: 0;
   border-color: transparent;
   padding: 5px;
 }
 
-.shop .container .shop-container .card a {
+.shop .container .shop-container .card a,
+.container .shop-container .card a {
   padding: 0;
 }
 
-.shop .container .shop-container .card img {
+.shop .container .shop-container .card img,
+.container .shop-container .card img {
   height: 150px;
   width: 100%;
   -o-object-fit: contain;
@@ -422,14 +487,24 @@ footer .footerWrap .row .col-10 .row .col-4 {
 
 .shop .container .shop-container .card .card-body h5, .shop .container .shop-container .card .card-body .h5,
 .shop .container .shop-container .card .card-body p,
-.shop .container .shop-container .card .card-body a {
+.shop .container .shop-container .card .card-body a,
+.container .shop-container .card .card-body h5,
+.container .shop-container .card .card-body .h5,
+.container .shop-container .card .card-body p,
+.container .shop-container .card .card-body a {
   margin: 0;
   padding: 0;
   font-size: 16px;
 }
 
-.shop .container .shop-container .card .card-body p {
+.shop .container .shop-container .card .card-body p,
+.container .shop-container .card .card-body p {
   font-family: soleil, sans-serif;
+}
+
+.container .shop-container .card {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .carousel button i {
@@ -464,6 +539,131 @@ footer .footerWrap .row .col-10 .row .col-4 {
   -o-object-fit: contain;
      object-fit: contain;
   background-color: white;
+}
+
+.product-container .row .col-12 .col-12 {
+  margin-top: 90px;
+}
+
+.product-container .row .col-12 ul li a {
+  color: black;
+  border: 3px solid #fddfdf;
+}
+
+.product-container .row .col-12 ul li a[aria-selected="true"] {
+  background-color: #fddfdf;
+}
+
+.product-container .row .col-12 .tab-content .tab-pane {
+  border: 3px solid #fddfdf;
+  padding: 10px;
+}
+
+.product-container .row > * {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.shop,
+.product-container .row {
+  width: 90vw;
+  margin: auto;
+  max-width: 400px;
+}
+
+.shop .col-12 .container,
+.product-container .row .col-12 .container {
+  width: 100vw;
+  left: 0;
+  position: absolute;
+}
+
+.shop div .shop-container,
+.product-container .row div .shop-container {
+  margin: auto;
+}
+
+.title,
+.breadcrumb .breadcrumb-item {
+  padding-left: var(--bs-gutter-x, 0.75rem);
+}
+
+/* Media Query for Tablets*/
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .shop,
+  .product-container {
+    width: 80vw;
+    max-width: 700px;
+  }
+  .title,
+  .breadcrumb {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+/* Media Query for Desktop*/
+@media (min-width: 1024px) {
+  .shop {
+    width: 70vw;
+    max-width: 900px;
+  }
+  .title,
+  .breadcrumb {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+#welcome-container {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#welcome-container div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#welcome-container div h1, #welcome-container div .h1,
+#welcome-container div button {
+  margin: 10px;
+}
+
+.addProduct form .form-group label,
+.editProduct form .form-group label {
+  font-family: monarcha, serif;
+  margin-top: 10px;
+}
+
+.addProduct form .form-group input,
+.addProduct form .form-group textarea,
+.addProduct form .form-group select,
+.editProduct form .form-group input,
+.editProduct form .form-group textarea,
+.editProduct form .form-group select {
+  border: 3px solid #fddfdf;
+  margin-bottom: 10px;
+  padding: 10px;
 }
 
 /*!

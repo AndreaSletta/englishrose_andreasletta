@@ -1,0 +1,46 @@
+.shop,
+.product-container .row {
+  width: 90vw;
+  margin: auto;
+  max-width: 400px;
+  .col-12 .container {
+    width: 100vw;
+    left: 0;
+    position: absolute;
+  }
+  div .shop-container {
+    margin: auto;
+  }
+}
+
+.title,
+.breadcrumb .breadcrumb-item {
+  padding-left: var(--bs-gutter-x, 0.75rem);
+}
+
+/* Media Query for Tablets*/
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .shop,
+  .product-container {
+    width: 80vw;
+    max-width: 700px;
+  }
+  .title,
+  .breadcrumb {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+/* Media Query for Desktop*/
+@media (min-width: 1024px) {
+  .shop {
+    width: 70vw;
+    max-width: 900px;
+  }
+  .title,
+  .breadcrumb {
+    width: 90%;
+    margin: auto;
+  }
+}

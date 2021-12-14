@@ -58,7 +58,7 @@
       </nav>
     </header>
     <main>
-      <div class="container clear-navbar">
+      <div class="clear-navbar">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -66,13 +66,13 @@
           </ol>
         </nav>
       </div>
-      <div class="container bg-primary mw-100">
-        <h1 class="py-3">Shop</h1>
+      <div class="bg-primary mw-100">
+        <h1 class="py-3 title">Shop</h1>
       </div>
-      <div class="container shop">
-        <div>
-          <form>
-            <div class="mb-3 mt-4">
+      <div class="shop pb-5 pt-3">
+        <div class="row">
+          <form class="col-md-auto">
+            <div class="mb-3">
               <label for="search" class="form-label d-none">Search</label>
               <input
                 type="text"
@@ -81,9 +81,9 @@
               />
             </div>
           </form>
-          <div class="dropdown mb-4">
+          <div class="dropdown col-md-auto">
             <button
-              class="btn btn-primary dropdown-toggle"
+              class="btn btn-primary dropdown-toggle shadow"
               type="button"
               id="dropdownMenuButton"
               data-bs-toggle="dropdown"
@@ -91,13 +91,16 @@
             >
               Default
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <ul
+              class="dropdown-menu shadow"
+              aria-labelledby="dropdownMenuButton1"
+            >
               <li><button id="default">Default</button></li>
               <li><button id="featured">Featured</button></li>
             </ul>
           </div>
         </div>
-        <div class="container">
+        <div class="container mt-4">
           <div class="shop-container"></div>
         </div>
       </div>

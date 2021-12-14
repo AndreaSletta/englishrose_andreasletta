@@ -21,9 +21,6 @@ async function getProducts() {
       <img src="${product.image[0].url}" class="card-img-top" alt="${product.image[0].alternativeText}">
       <div class="card-body">
     <h5 class="card-title">${product.title}</h5>
-    <p class="card-text">$ ${product.price}</p>
-  
-    <i class="fas fa-cart-plus add-to-cart"></i>
   </div>  </a></div>`;
     });
   } catch (error) {

@@ -40,10 +40,6 @@
               <li class="nav-item">
                 <a class="nav-link" href="editProduct.html">Edit product</a>
               </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="removeProduct.html">Remove product</a>
-              </li>
             </ul>
           </div>
 
@@ -52,13 +48,18 @@
       </nav>
     </header>
     <main>
-      <div
-        class="container bg-primary clear-navbar row justify-content-between"
-      >
-        <h1 class="col">Admin</h1>
-        <div class="col">
-          <button type="button" class="btn btn-light signoutBtn">
-            Sign out
+      <div class="container-fluid bg-primary" id="welcome-container">
+        <div>
+          <h1 class="text-center">Welcome Name here</h1>
+          <p>What would you like to do?</p>
+          <button class="btn btn-light">
+            <a href="addProduct.html">Add Product</a>
+          </button>
+          <button class="btn btn-light">
+            <a href="editProduct.html"> Edit or delete product</a>
+          </button>
+          <button class="btn btn-light">
+            <a href="#"> Sign out</a>
           </button>
         </div>
       </div>

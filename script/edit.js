@@ -27,6 +27,9 @@ const message = document.querySelector("#message");
 
 const breadcrumbTitle = document.querySelector(".title");
 
+var oldUrl;
+var oldId;
+
 (async function () {
   try {
     const response = await fetch(productURL);
@@ -39,6 +42,7 @@ const breadcrumbTitle = document.querySelector(".title");
 
     console.log(json.id);
     deleteButton(json.id);
+    console.log(product);
 
     productId.value = product.id;
     title.value = product.title;
@@ -48,6 +52,10 @@ const breadcrumbTitle = document.querySelector(".title");
     price.value = product.price;
     isFeatured.value = product.featured;
     image.value = product.image[0].url;
+
+    oldUrl = product.image[0].url;
+    oldId = product.image[0].id;
+    //product.image[0].id; //product.image[0].url;
   } catch (error) {
     console.log(error);
   }
@@ -88,7 +96,8 @@ function submitForm(event) {
     ingredientsValue,
     priceValue,
     isFeaturedValue,
-    imageValue
+    imageValue,
+    oldUrl
   );
 }
 
@@ -99,10 +108,20 @@ async function editProduct(
   ingredients,
   price,
   isFeatured,
-  image
+  image,
+  oldUrl
 ) {
   const url = baseUrl + "products/" + id;
 
+  console.log(oldUrl);
+  console.log(image);
+
+  if (oldUrl == image) {
+    console.log("The same!");
+  } else {
+    console.log("Different");
+  }
+  return;
   const data = JSON.stringify({
     title: title,
     info: info,
@@ -110,13 +129,14 @@ async function editProduct(
     ingredients: ingredients,
     price: price,
     featured: isFeatured,
-    image: image,
+    image: oldId,
   });
 
   console.log(isFeatured);
 
   const token = getToken();
 
+  // if()
   const options = {
     method: "PUT",
     body: data,

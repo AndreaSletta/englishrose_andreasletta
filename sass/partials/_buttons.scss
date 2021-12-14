@@ -1,8 +1,13 @@
 .jumbotron .btn,
 .card .card-body .btn {
   background-color: white;
+
   &:hover {
     color: $red;
+  }
+  a {
+    text-decoration: none;
+    color: black;
   }
 }
 
@@ -10,4 +15,29 @@ footer .row div form div button,
 .container .row div button,
 .card .card-body .btn {
   border-radius: 0;
+}
+
+.shop div .dropdown {
+  .btn {
+    border-radius: 0px;
+  }
+  .dropdown-menu {
+    border: 0px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0px;
+  }
+  li button {
+    border: none;
+
+    background-color: white;
+  }
+}
+
+#welcome-container div .btn {
+  a {
+    text-decoration: none;
+    color: black;
+    &:hover {
+      color: $red;
+    }
+  }
 }

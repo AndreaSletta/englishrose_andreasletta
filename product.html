@@ -63,7 +63,49 @@
           </ol>
         </nav>
       </div>
-      <div class="container product-container"></div>
+      <div class="container product-container pt-2 pb-5">
+
+        <div class="row pb-5 pt-3">
+          <div class="col-12" id="product-image">
+          
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 p-0 m-0">
+            <div class="container bg-primary">
+              <h1 class="py-3 text-center" id="product-title"></h1>
+            </div>
+          </div>
+          <div class="row col-12 ">
+            <div class="col-12">
+            <p id="info"></p>
+            <p id="price"></p>
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-white border-secondary shadow  add-to-cart">
+                Add to cart <i class="fas fa-plus ps-2"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="home" aria-selected="true">Description</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="ingredients-tab" data-toggle="tab" href="#ingredients" role="tab" aria-controls="profile" aria-selected="false">Ingredients</a>
+                </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane " id="description"></div>
+                <div class="tab-pane " id="ingredients"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div
         id="carouselExampleIndicators"
         class="

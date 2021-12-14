@@ -6,6 +6,9 @@
   padding: 10vw;
 }
 
-.maxwidth {
-  width: 100vw;
+/* Media Query for Desktop*/
+@media (min-width: 1024px) {
+  .clear-navbar {
+    padding-top: 100px;
+  }
 }
