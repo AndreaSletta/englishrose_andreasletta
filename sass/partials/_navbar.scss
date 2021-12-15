@@ -134,4 +134,17 @@ header .navbar {
       display: none;
     }
   }
+  header #admin-nav .container-fluid {
+    .collapse {
+      width: 100%;
+      .navbar-nav {
+        width: auto;
+        justify-content: space-around;
+        .nav-item {
+          padding-left: 30px;
+          padding-right: 30px;
+        }
+      }
+    }
+  }
 }

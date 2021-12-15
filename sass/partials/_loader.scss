@@ -1,0 +1,11 @@
+.loading {
+  height: 100vh;
+  background-image: linear-gradient(white, $primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  i {
+    color: $red;
+    font-size: 30px;
+  }
+}

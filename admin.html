@@ -15,6 +15,7 @@
     <header>
       <nav
         class="navbar navbar-expand-lg navbar-light shadow fixed-top bg-white"
+        id="admin-nav"
       >
         <div class="container-fluid">
           <button
@@ -38,36 +39,49 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="editProduct.html">Edit product</a>
+                <a class="nav-link" href="editProductAll.html"
+                  >Edit or delete product</a
+                >
+              </li>
+              <li class="nav-item">
+                <button id="sign-out">Sign out</a></button>
+               
               </li>
             </ul>
           </div>
 
-          <a class="navbar-brand" id="logobutton" href="admin.html"></a>
+          <a class="navbar-brand text-center" id="logobutton" href="admin.html">
+          </a>
         </div>
       </nav>
     </header>
     <main>
-      <div class="container-fluid bg-primary" id="welcome-container">
-        <div>
-          <h1 class="text-center">Welcome Name here</h1>
-          <p>What would you like to do?</p>
-          <button class="btn btn-light">
-            <a href="addProduct.html">Add Product</a>
-          </button>
-          <button class="btn btn-light">
-            <a href="editProduct.html"> Edit or delete product</a>
-          </button>
-          <button class="btn btn-light">
-            <a href="#"> Sign out</a>
-          </button>
-        </div>
+      <div class="container-fluid bg-primary" id="welcome-container"></div>
+      <div class="container login">
+        <p class="message-container"></p>
+        <form>
+          <div class="my-3">
+            <label for="inputEmail" class="form-label">Email address</label>
+            <input
+              class="form-control"
+              id="inputEmail"
+              aria-describedby="emailHelp"
+            />
+          </div>
+
+          <div class="my-3">
+            <label for="inputPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="inputPassword" />
+          </div>
+
+          <button class="btn btn-primary">Submit</button>
+        </form>
       </div>
     </main>
 
     <footer class="container-fluid bg-primary py-3">
       <div class="row justify-content-center">
-        <div class="col-8">
+        <div class="col-6">
           <img
             src="files/logo.svg"
             class="mx-auto d-block"
@@ -75,72 +89,19 @@
           />
         </div>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-10 text-center text-md-start pb-1">
-          <a href="#">About us</a>
-        </div>
-        <div class="col-10 text-center text-md-start pb-1">
-          <a href="#">Contact us</a>
-        </div>
-        <div class="col-10 text-center text-md-start pb-1">
-          <a href="#">Shipping policy</a>
-        </div>
-        <div
-          class="
-            col-10
-            text-center text-md-start
-            row
-            justify-content-center
-            pb-2
-          "
-        >
-          <div class="col-10 pb-1">
-            <a href="#" class="fs-1"><i class="fab fa-facebook-square"></i></a>
-            <a href="#" class="fs-1"><i class="fab fa-instagram-square"></i></a>
-          </div>
-        </div>
       </div>
       <div class="row justify-content-center">
         <div class="col-10 text-center pb-1 serif">
-          Sign up to our newsletter and be the first to hear of our newest
-          releases!
-        </div>
-        <div class="col-10 pb-1">
-          <form>
-            <div class="mb-3 justify-content-center">
-              <label for="exampleInputEmail1" class="form-label d-none"
-                >Email address</label
-              >
-              <input
-                type="email"
-                class="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-              />
-              <button type="submit" class="btn btn-dark">Sign up</button>
-            </div>
-          </form>
+          Admin page
         </div>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-10">
-          <div class="row justify-content-between">
-            <div class="col-4 text-center pb-1"><a href="#">Support</a></div>
-            <div class="col-4 text-center pb-1">
-              <a href="#">Privacy policy</a>
-            </div>
-            <div class="col-4 text-center pb-1">
-              <a href="#">Therms of use</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-10 text-center">English rose © 2021</div>
-      </div>
+    
     </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+    <script src="script/admin.js" type="module"></script>
   </body>
 </html>

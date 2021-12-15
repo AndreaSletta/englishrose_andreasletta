@@ -6,9 +6,26 @@
   padding: 10vw;
 }
 
+.hoverscale,
+.smoothetransition {
+  transition: all, 0.5s;
+}
+
+.hoverscale:hover {
+  transform: scale(1.05);
+  transition: all, 0.5s;
+  cursor: pointer;
+}
+
 /* Media Query for Desktop*/
 @media (min-width: 1024px) {
   .clear-navbar {
     padding-top: 100px;
   }
+}
+
+main,
+body {
+  padding: 0;
+  margin: 0;
 }

@@ -2,6 +2,9 @@ import { baseUrl } from "./settings/api.js";
 
 import { getCartProducts } from "./utils/cartFunction.js";
 
+import { addCarousel } from "./products/carousel.js";
+addCarousel();
+
 const queryString = document.location.search;
 
 const params = new URLSearchParams(queryString);
@@ -26,7 +29,25 @@ const descriptionText = document.querySelector("#description");
 const ingredientsTab = document.querySelector("#ingredients-tab");
 const ingredientsText = document.querySelector("#ingredients");
 
-// get singel product
+const main = document.querySelector("main");
+
+const loading = document.querySelector(".loading");
+
+main.style.display = "none";
+
+const delay = ms => new Promise(res => setTimeout(res, ms));
+
+if (
+  document.readyState === "complete" ||
+  document.readyState === "loaded" ||
+  document.readyState === "interactive"
+) {
+  await delay(1000);
+
+  main.style.display = "block";
+
+  loading.style.display = "none";
+}
 
 async function getProduct() {
   try {

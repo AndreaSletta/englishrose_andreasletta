@@ -1,13 +1,14 @@
-.jumbotron .btn,
-.card .card-body .btn {
+.jumbotron .container .btn {
   background-color: white;
+  border-radius: 0px;
 
-  &:hover {
-    color: $red;
-  }
   a {
     text-decoration: none;
     color: black;
+    transition: all 0.3s;
+    &:hover {
+      color: $red;
+    }
   }
 }
 

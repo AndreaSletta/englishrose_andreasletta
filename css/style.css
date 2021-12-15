@@ -147,6 +147,18 @@ header .navbar .navbar-brand:hover {
   header .navbar .container-fluid .navbar-toggler, header .navbar .container-sm .navbar-toggler, header .navbar .container-md .navbar-toggler, header .navbar .container-lg .navbar-toggler, header .navbar .container-xl .navbar-toggler, header .navbar .container-xxl .navbar-toggler {
     display: none;
   }
+  header #admin-nav .container-fluid .collapse, header #admin-nav .container-sm .collapse, header #admin-nav .container-md .collapse, header #admin-nav .container-lg .collapse, header #admin-nav .container-xl .collapse, header #admin-nav .container-xxl .collapse {
+    width: 100%;
+  }
+  header #admin-nav .container-fluid .collapse .navbar-nav, header #admin-nav .container-sm .collapse .navbar-nav, header #admin-nav .container-md .collapse .navbar-nav, header #admin-nav .container-lg .collapse .navbar-nav, header #admin-nav .container-xl .collapse .navbar-nav, header #admin-nav .container-xxl .collapse .navbar-nav {
+    width: auto;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  header #admin-nav .container-fluid .collapse .navbar-nav .nav-item, header #admin-nav .container-sm .collapse .navbar-nav .nav-item, header #admin-nav .container-md .collapse .navbar-nav .nav-item, header #admin-nav .container-lg .collapse .navbar-nav .nav-item, header #admin-nav .container-xl .collapse .navbar-nav .nav-item, header #admin-nav .container-xxl .collapse .navbar-nav .nav-item {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
 
 .jumbotron {
@@ -203,20 +215,20 @@ footer .row div a,
   font-family: monarcha, serif;
 }
 
-.jumbotron .btn,
-.card .card-body .btn {
+.jumbotron .container .btn {
   background-color: white;
+  border-radius: 0px;
 }
 
-.jumbotron .btn:hover,
-.card .card-body .btn:hover {
-  color: #c30b0b;
-}
-
-.jumbotron .btn a,
-.card .card-body .btn a {
+.jumbotron .container .btn a {
   text-decoration: none;
   color: black;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.jumbotron .container .btn a:hover {
+  color: #c30b0b;
 }
 
 footer .row div form div button,
@@ -364,11 +376,31 @@ footer .footerWrap .row .col-10 .row .col-4 {
   padding: 10vw;
 }
 
+.hoverscale,
+.smoothetransition {
+  -webkit-transition: all, 0.5s;
+  transition: all, 0.5s;
+}
+
+.hoverscale:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: all, 0.5s;
+  transition: all, 0.5s;
+  cursor: pointer;
+}
+
 /* Media Query for Desktop*/
 @media (min-width: 1024px) {
   .clear-navbar {
     padding-top: 100px;
   }
+}
+
+main,
+body {
+  padding: 0;
+  margin: 0;
 }
 
 .shop div .dropdown button {
@@ -507,6 +539,14 @@ footer .footerWrap .row .col-10 .row .col-4 {
   margin-bottom: 30px;
 }
 
+.carousel .carousel-inner {
+  /*overflow: visible;*/
+}
+
+.carousel .carousel-inner .carousel-item .row .card a:hover {
+  text-decoration: none;
+}
+
 .carousel button i {
   color: black;
 }
@@ -616,6 +656,8 @@ footer .footerWrap .row .col-10 .row .col-4 {
 }
 
 #welcome-container {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#fddfdf));
+  background-image: linear-gradient(white, #fddfdf);
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -649,8 +691,28 @@ footer .footerWrap .row .col-10 .row .col-4 {
   margin: 10px;
 }
 
+.login {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#fddfdf));
+  background-image: linear-gradient(white, #fddfdf);
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/*
+#admin-nav .container-fluid {
+  min-height: 40px;
+}*/
 .addProduct form .form-group label,
-.editProduct form .form-group label {
+.editProduct form .form-group label,
+.container form div label {
   font-family: monarcha, serif;
   margin-top: 10px;
 }
@@ -660,10 +722,33 @@ footer .footerWrap .row .col-10 .row .col-4 {
 .addProduct form .form-group select,
 .editProduct form .form-group input,
 .editProduct form .form-group textarea,
-.editProduct form .form-group select {
+.editProduct form .form-group select,
+.container form div input,
+.container form div textarea,
+.container form div select {
   border: 3px solid #fddfdf;
   margin-bottom: 10px;
   padding: 10px;
+}
+
+.loading {
+  height: 100vh;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#fddfdf));
+  background-image: linear-gradient(white, #fddfdf);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.loading i {
+  color: #c30b0b;
+  font-size: 30px;
 }
 
 /*!

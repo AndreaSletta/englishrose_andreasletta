@@ -1,5 +1,16 @@
-.carousel button i {
-  color: black;
+.carousel {
+  .carousel-inner {
+    /*overflow: visible;*/
+    .carousel-item .row .card a {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  button i {
+    color: black;
+  }
 }
 
 .padding {

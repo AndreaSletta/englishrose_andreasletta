@@ -1,30 +1,161 @@
 import { baseUrl } from "./settings/api.js";
+import { getToken } from "./utils/storage.js";
+import { deleteButton } from "./products/deleteButton.js";
+import logoutButton from "./products/logout.js";
 
-const shopContainer = document.querySelector(".shop-container");
+const queryString = document.location.search;
+const params = new URLSearchParams(queryString);
+const id = params.get("id");
 
-async function getProducts() {
-  const url = baseUrl + "products";
+import { getUsername } from "./utils/storage.js";
 
-  try {
-    const response = await fetch(url);
-    const json = await response.json();
+const username = getUsername();
 
-    console.log(json);
+if (username) {
+  const productURL = baseUrl + "products/" + id;
 
-    const productList = json;
+  const form = document.querySelector("form");
+  const productId = document.querySelector("#id");
+  const title = document.querySelector("#title");
+  const info = document.querySelector("#info");
+  const description = document.querySelector("#description");
+  const ingredients = document.querySelector("#ingredients");
+  const price = document.querySelector("#price");
+  const isFeatured = document.querySelector("#isFeatured");
+  const image = document.querySelector("#image");
+  const message = document.querySelector("#message");
 
-    productList.forEach(product => {
-      /* Add products to shop.html */
-      shopContainer.innerHTML += `
-      <div class="card col-10">
-      <a href="edit.html?id=${product.id}" class="btn">
-      <img src="${product.image[0].url}" class="card-img-top" alt="${product.image[0].alternativeText}">
-      <div class="card-body">
-    <h5 class="card-title">${product.title}</h5>
-  </div>  </a></div>`;
-    });
-  } catch (error) {
-    console.log(error);
+  const breadcrumbTitle = document.querySelector(".title");
+
+  var oldUrl;
+  var oldId;
+
+  (async function () {
+    try {
+      const response = await fetch(productURL);
+
+      const json = await response.json();
+
+      const product = json;
+
+      breadcrumbTitle.innerHTML += `${product.title}`;
+
+      console.log(json.id);
+      deleteButton(json.id);
+      console.log(product);
+
+      productId.value = product.id;
+      title.value = product.title;
+      info.value = product.info;
+      description.value = product.description;
+      ingredients.value = product.ingredients;
+      price.value = product.price;
+      isFeatured.value = product.featured;
+      image.value = product.image[0].url;
+
+      oldUrl = product.image[0].url;
+      oldId = product.image[0].id;
+      //product.image[0].id; //product.image[0].url;
+    } catch (error) {
+      console.log(error);
+    }
+  })();
+
+  form.addEventListener("submit", submitForm);
+
+  function submitForm(event) {
+    event.preventDefault();
+    message.innerHTML = "";
+
+    const productIdValue = productId.value.trim();
+    const titleValue = title.value.trim();
+    const infoValue = info.value.trim();
+    const descriptionValue = description.value.trim();
+    const ingredientsValue = ingredients.value.trim();
+    const priceValue = parseFloat(price.value);
+    const isFeaturedValue = isFeatured.value.trim();
+    const imageValue = image.value.trim();
+
+    if (
+      titleValue.length === 0 ||
+      infoValue.length === 0 ||
+      descriptionValue.length === 0 ||
+      ingredientsValue.length === 0 ||
+      priceValue.length === 0 ||
+      isNaN(priceValue) ||
+      isFeaturedValue.length === 0 ||
+      imageValue.length === 0
+    ) {
+      return (message.innerHTML = `<h2>Error`);
+    }
+
+    editProduct(
+      titleValue,
+      infoValue,
+      descriptionValue,
+      ingredientsValue,
+      priceValue,
+      isFeaturedValue,
+      imageValue,
+      oldUrl
+    );
   }
+
+  async function editProduct(
+    title,
+    info,
+    description,
+    ingredients,
+    price,
+    isFeatured,
+    image,
+    oldUrl
+  ) {
+    const url = baseUrl + "products/" + id;
+
+    console.log(oldUrl);
+    console.log(image);
+
+    if (oldUrl == image) {
+      console.log("The same!");
+    } else {
+      console.log("Different");
+    }
+    return;
+    const data = JSON.stringify({
+      title: title,
+      info: info,
+      description: description,
+      ingredients: ingredients,
+      price: price,
+      featured: isFeatured,
+      image: oldId,
+    });
+
+    console.log(isFeatured);
+
+    const token = getToken();
+
+    // if()
+    const options = {
+      method: "PUT",
+      body: data,
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    try {
+      const response = await fetch(url, options);
+      const json = await response.json();
+      console.log(json);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+} else {
+  document.location.href = "/admin.html";
 }
-getProducts();
+
+logoutButton();

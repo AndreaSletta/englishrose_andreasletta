@@ -1,4 +1,5 @@
 #welcome-container {
+  background-image: linear-gradient(white, $primary);
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -14,3 +15,15 @@
     }
   }
 }
+
+.login {
+  background-image: linear-gradient(white, $primary);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*
+#admin-nav .container-fluid {
+  min-height: 40px;
+}*/
