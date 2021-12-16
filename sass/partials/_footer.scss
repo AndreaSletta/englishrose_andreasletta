@@ -54,7 +54,7 @@ footer {
 }
 
 /* Media Query for Tablets*/
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
+@media only screen and (min-width: 767.98px) and (max-width: 991.98px) {
   footer {
     .footerWrap {
       display: flex;
@@ -70,7 +70,7 @@ footer {
 }
 
 /* Media Query for Desktop*/
-@media (min-width: 1024px) {
+@media (min-width: 922px) {
   footer {
     .footerWrap {
       display: flex;

@@ -51,7 +51,7 @@ async function getProduct() {
 
     productInfo.innerHTML += `${product.info}`;
 
-    productPrice.innerHTML += `${product.price}`;
+    productPrice.innerHTML += `$${product.price} EUR`;
 
     descriptionText.innerHTML += `${product.description}`;
 

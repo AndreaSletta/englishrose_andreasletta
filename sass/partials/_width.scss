@@ -3,10 +3,10 @@
   width: 90vw;
   margin: auto;
   max-width: 400px;
-  .col-12 .container {
+  .full-width {
     width: 100vw;
-    left: 0;
-    position: absolute;
+    position: relative;
+    left: calc(-50vw + 50%);
   }
   div .shop-container {
     margin: auto;
@@ -18,16 +18,22 @@
   padding-left: var(--bs-gutter-x, 0.75rem);
 }
 
-.shop,
-.product-container {
+.shop {
   width: 80vw;
   max-width: 700px;
 }
 
+.product-container {
+  padding: 0;
+  .row {
+    width: 80vw;
+    max-width: 700px;
+  }
+}
+
 /* Media Query for Tablets*/
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-  .shop,
-  .product-container {
+@media only screen and (min-width: 767.98px) and (max-width: 991.98px) {
+  .shop {
     width: 80vw;
     max-width: 700px;
   }
@@ -39,7 +45,7 @@
 }
 
 /* Media Query for Desktop*/
-@media (min-width: 1024px) {
+@media (min-width: 992px) {
   .shop {
     width: 70vw;
     max-width: 900px;

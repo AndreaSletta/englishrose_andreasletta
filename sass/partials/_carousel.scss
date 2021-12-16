@@ -29,7 +29,7 @@
   overflow: visible;
 }*/
 /* Media Query for Tablets*/
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
+@media only screen and (min-width: 767.98px) and (max-width: 991.98px) {
   .carousel-item .row {
     width: 70%;
     margin: auto;
@@ -37,7 +37,7 @@
 }
 
 /* Media Query for Desktop*/
-@media (min-width: 1024px) {
+@media (min-width: 922px) {
   .carousel-item .row {
     width: 70%;
     margin: auto;

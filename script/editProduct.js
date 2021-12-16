@@ -134,45 +134,102 @@ if (username) {
     console.log(oldUrl);
     console.log(image);
 
-    if (oldUrl == image) {
-      console.log("The same!");
-    } else {
-      console.log("Different"); ///////
-      const uploadUrl = baseUrl + "upload";
-
-      const productUrl = baseUrl + "products";
-    }
-    return;
-    const data = JSON.stringify({
-      title: title,
-      info: info,
-      description: description,
-      ingredients: ingredients,
-      price: price,
-      featured: isFeatured,
-      image: oldId,
-    });
-
-    console.log(isFeatured);
-
     const token = getToken();
 
-    // if()
-    const options = {
-      method: "PUT",
-      body: data,
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    };
+    if (oldUrl == image) {
+      console.log("The same!");
+      // Just send as normal
 
-    try {
-      const response = await fetch(url, options);
-      const json = await response.json();
-      console.log(json);
-    } catch (error) {
-      console.log(error);
+      const data = JSON.stringify({
+        title: title,
+        info: info,
+        description: description,
+        ingredients: ingredients,
+        price: price,
+        featured: isFeatured,
+        image: oldId,
+      });
+
+      const options = {
+        method: "PUT",
+        body: data,
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      };
+
+      try {
+        const response = await fetch(url, options);
+        const json = await response.json();
+        console.log(json);
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      console.log("Different");
+      //Upload image first as in add product
+
+      // fetch image from provided url
+      fetch(image)
+        //Convert image to binary
+        .then(response => response.blob())
+        .then(function (myBlob) {
+          //Add image data to formdata
+          const formData = new FormData();
+          formData.append("files", myBlob);
+          console.log(formData);
+
+          //Upload the image to strapi
+          fetch(uploadUrl, {
+            method: "POST",
+            headers: {
+              Authorization: `Bearer ${token}`, // <- Don't forget Authorization header if you are using it.
+            },
+            body: formData,
+          })
+            //Await upload confirmation
+            .then(response => response.json())
+            .then(result => {
+              console.log(result);
+
+              //Save strapi id of new image
+              const imageId = result[0].id;
+              console.log(imageId);
+
+              //Create new item and link to newly created image
+              const data = JSON.stringify({
+                title: title,
+                info: info,
+                description: description,
+                ingredients: ingredients,
+                price: price,
+                featured: isFeatured,
+                image: imageId,
+              });
+
+              // Upload new product
+              const options = {
+                method: "PUT",
+                body: data,
+                headers: {
+                  "Content-Type": "application/json",
+                  Authorization: `Bearer ${token}`,
+                },
+              };
+              try {
+                fetch(url, options).then(response => {
+                  console.log(response);
+                });
+              } catch (error) {
+                console.log(error);
+              }
+            })
+            .catch(function (err) {
+              console.log("error:");
+              console.log(err);
+            });
+        });
     }
   }
 } else {

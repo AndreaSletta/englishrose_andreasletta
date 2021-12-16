@@ -93,7 +93,7 @@ header .navbar {
 }
 
 /* Media Query for Tablets*/
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
+@media only screen and (min-width: 767.98px) and (max-width: 991.98px) {
   header .navbar .container-fluid {
     width: 90%;
     margin: auto;
@@ -101,20 +101,23 @@ header .navbar {
 }
 
 /* Media Query for Desktop*/
-@media (min-width: 1024px) {
+@media (min-width: 922px) {
   header .navbar .container-fluid {
     width: 90%;
     margin: auto;
     a .fa-shopping-cart {
-      top: 20px;
+      top: 32px;
       right: 20px;
     }
     .collapse {
       justify-content: center;
       margin-top: 40px;
+      display: flex;
+
       ul {
         width: 240px;
         justify-content: space-between;
+        flex-direction: row;
         .nav-item {
           .active {
             text-decoration: underline;

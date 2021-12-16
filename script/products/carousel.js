@@ -29,7 +29,7 @@ export function addCarousel() {
 
       /* Add products to index.html carousel */
 
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < 766.97) {
         for (var i = 0; i < featuredArray.length; i += 1) {
           carouselContainer.innerHTML += `
           <div class="carousel-item">
@@ -47,8 +47,8 @@ export function addCarousel() {
         }
       }
 
-      if (window.innerWidth > 767 && window.innerWidth < 1024) {
-        for (var i = 0; i < featuredArray.length; i += 2) {
+      if (window.innerWidth > 767.98 && window.innerWidth < 991.98) {
+        for (var i = 0; i < featuredArray.length - 2; i += 2) {
           carouselContainer.innerHTML += `
       <div class="carousel-item">
       <div class="row justify-content-around">
@@ -70,15 +70,15 @@ export function addCarousel() {
           <div class="card-body d-flex flex-column justify-content-between">
           <h5 class="card-title text-dark ">${featuredArray[i + 1].title}</h5>
           <button class="btn btn-secondary ">Shop now</button>
-        </div</a>
+        </div></a>
   </div>
   </div>
     </div>`;
         }
       }
 
-      if (window.innerWidth > 1023) {
-        for (var i = 0; i < featuredArray.length; i += 3) {
+      if (window.innerWidth > 922) {
+        for (var i = 0; i < featuredArray.length - 3; i += 3) {
           carouselContainer.innerHTML += `
       <div class="carousel-item">
       <div class="row justify-content-around">
@@ -90,9 +90,9 @@ export function addCarousel() {
           <div class="card-body d-flex flex-column justify-content-between">
           <h5 class="card-title text-dark ">${featuredArray[i + 1].title}</h5>
           <button class="btn btn-secondary ">Shop now</button>
-        </div</a>
+        </div></a>
   </div>
-  //
+  
   <div class="card hoverscale shadow col-3">
      <a href="product.html?id=${featuredArray[i + 1].id}">
      <img src="${
@@ -103,9 +103,11 @@ export function addCarousel() {
           <div class="card-body d-flex flex-column justify-content-between">
           <h5 class="card-title text-dark ">${featuredArray[i + 1].title}</h5>
           <button class="btn btn-secondary ">Shop now</button>
-        </div</a>
+        </div></a>
   </div>
-  //
+  
+
+  
   <div class="card hoverscale shadow col-3">
   <a href="product.html?id=${featuredArray[i + 2].id}">
   <img src="${featuredArray[i + 2].image[0].url}" class="card-img-top" alt="${
@@ -114,9 +116,9 @@ export function addCarousel() {
           <div class="card-body d-flex flex-column justify-content-between">
           <h5 class="card-title text-dark ">${featuredArray[i + 2].title}</h5>
           <button class="btn btn-secondary ">Shop now</button>
-        </div</a>
+        </div></a>
 </div>
-  //
+  
 
   </div>
     </div>`;

@@ -27,7 +27,7 @@ async function getProducts() {
       <img src="${product.image[0].url}" class="card-img-top" alt="${product.image[0].alternativeText}">
       <div class="card-body ">
     <h5 class="card-title">${product.title}</h5>
-    <p class="card-text">$ ${product.price}</p>
+    <p class="card-text">$ ${product.price} EUR</p>
   </div> </a> </div>`;
       });
     }
@@ -38,7 +38,10 @@ async function getProducts() {
     search.onkeyup = function () {
       const searchValue = event.target.value.trim().toLowerCase();
       const filteredProducts = json.filter(function (product) {
-        if (product.title.toLowerCase().includes(searchValue)) {
+        if (
+          product.title.toLowerCase().includes(searchValue) ||
+          product.description.toLowerCase().includes(searchValue)
+        ) {
           return true;
         }
       });
