@@ -2,6 +2,8 @@ import { baseUrl } from "../settings/api.js";
 
 const carouselContainer = document.querySelector(".feature-container");
 
+const loading = document.querySelector(".loadingCarousel");
+
 export function addCarousel() {
   async function getProducts() {
     const url = baseUrl + "products";
@@ -11,6 +13,8 @@ export function addCarousel() {
       const json = await response.json();
 
       const product = json;
+
+      loading.style.display = "none";
 
       var featuredArray = [];
 
@@ -33,10 +37,9 @@ export function addCarousel() {
          <div class="card hoverscale shadow col-8">
          <a href="product.html?id=${featuredArray[i].id}">
         <img src="${featuredArray[i].image[0].url}" class="card-img-top" alt="${featuredArray[i].image[0].alternativeText}">
-        <div class="card-body">
-          <h5 class="card-title text-dark">${featuredArray[i].title}</h5>
-          <p class="card-text text-dark">${featuredArray[i].description}</p>
-          <p class="card-text text-dark">$ ${featuredArray[i].price}</p>
+        <div class="card-body d-flex flex-column justify-content-between">
+          <h5 class="card-title text-dark ">${featuredArray[i].title}</h5>
+          <button class="btn btn-secondary ">Shop now</button>
         </div></a>
       </div>
       </div>
@@ -54,28 +57,26 @@ export function addCarousel() {
      <img src="${featuredArray[i].image[0].url}" class="card-img-top" alt="${
             featuredArray[i].image[0].alternativeText
           }">
-     <div class="card-body">
-       <h5 class="card-title text-dark">${featuredArray[i].title}</h5>
-       <p class="card-text text-dark">${featuredArray[i].description}</p>
-       <p class="card-text text-dark">$ ${featuredArray[i].price}</p>
-     </div></a>
+          <div class="card-body d-flex flex-column justify-content-between">
+          <h5 class="card-title text-dark ">${featuredArray[i].title}</h5>
+          <button class="btn btn-secondary ">Shop now</button>
+        </div></a>
   </div>
   <div class="card hoverscale shadow col-5">
   <a href="product.html?id=${featuredArray[i + 1].id}">
   <img src="${featuredArray[i + 1].image[0].url}" class="card-img-top" alt="${
             featuredArray[i + 1].image[0].alternativeText
           }">
-  <div class="card-body">
-    <h5 class="card-title text-dark">${featuredArray[i + 1].title}</h5>
-    <p class="card-text text-dark">${featuredArray[i + 1].description}</p>
-    <p class="card-text text-dark">$ ${featuredArray[i + 1].price}</p>
-  </div></a>
+          <div class="card-body d-flex flex-column justify-content-between">
+          <h5 class="card-title text-dark ">${featuredArray[i + 1].title}</h5>
+          <button class="btn btn-secondary ">Shop now</button>
+        </div</a>
   </div>
   </div>
     </div>`;
         }
       }
-      console.log(featuredArray.length);
+
       if (window.innerWidth > 1023) {
         for (var i = 0; i < featuredArray.length; i += 3) {
           carouselContainer.innerHTML += `
@@ -86,11 +87,10 @@ export function addCarousel() {
      <img src="${featuredArray[i].image[0].url}" class="card-img-top" alt="${
             featuredArray[i].image[0].alternativeText
           }">
-     <div class="card-body">
-       <h5 class="card-title text-dark">${featuredArray[i].title}</h5>
-       <p class="card-text text-dark">${featuredArray[i].description}</p>
-       <p class="card-text text-dark">$ ${featuredArray[i].price}</p>
-     </div></a>
+          <div class="card-body d-flex flex-column justify-content-between">
+          <h5 class="card-title text-dark ">${featuredArray[i + 1].title}</h5>
+          <button class="btn btn-secondary ">Shop now</button>
+        </div</a>
   </div>
   //
   <div class="card hoverscale shadow col-3">
@@ -100,11 +100,10 @@ export function addCarousel() {
      }" class="card-img-top" alt="${
             featuredArray[i + 1].image[0].alternativeText
           }">
-     <div class="card-body">
-       <h5 class="card-title text-dark">${featuredArray[i + 1].title}</h5>
-       <p class="card-text text-dark">${featuredArray[i + 1].description}</p>
-       <p class="card-text text-dark">$ ${featuredArray[i + 1].price}</p>
-     </div></a>
+          <div class="card-body d-flex flex-column justify-content-between">
+          <h5 class="card-title text-dark ">${featuredArray[i + 1].title}</h5>
+          <button class="btn btn-secondary ">Shop now</button>
+        </div</a>
   </div>
   //
   <div class="card hoverscale shadow col-3">
@@ -112,11 +111,10 @@ export function addCarousel() {
   <img src="${featuredArray[i + 2].image[0].url}" class="card-img-top" alt="${
             featuredArray[i + 2].image[0].alternativeText
           }">
-  <div class="card-body">
-    <h5 class="card-title text-dark">${featuredArray[i + 2].title}</h5>
-    <p class="card-text text-dark">${featuredArray[i + 2].description}</p>
-    <p class="card-text text-dark">$ ${featuredArray[i + 2].price}</p>
-  </div></a>
+          <div class="card-body d-flex flex-column justify-content-between">
+          <h5 class="card-title text-dark ">${featuredArray[i + 2].title}</h5>
+          <button class="btn btn-secondary ">Shop now</button>
+        </div</a>
 </div>
   //
 

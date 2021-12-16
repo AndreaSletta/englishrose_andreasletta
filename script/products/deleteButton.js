@@ -6,6 +6,9 @@ export function deleteButton(id) {
   container.innerHTML = `<button type="button" class="delete btn btn-primary">Delete </button>`;
 
   const button = document.querySelector("button.delete");
+
+  const message = document.querySelector("#message");
+
   button.onclick = async function () {
     console.log(id);
 
@@ -23,6 +26,10 @@ export function deleteButton(id) {
           Authorization: `Bearer ${token}`,
         },
       };
+
+      message.style.display = "block";
+      message.innerHTML = `<h2>Product deleted</h2> 
+      `;
 
       try {
         const response = await fetch(url, options);

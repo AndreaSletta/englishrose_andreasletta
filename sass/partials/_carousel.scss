@@ -18,6 +18,16 @@
   padding-left: 0;
   padding-right: 0;
 }
+
+.flex-column {
+  height: 130px !important;
+  align-content: space-between;
+}
+
+/*
+#carouselExampleIndicators .carousel-inner {
+  overflow: visible;
+}*/
 /* Media Query for Tablets*/
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .carousel-item .row {

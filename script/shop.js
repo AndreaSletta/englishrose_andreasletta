@@ -1,22 +1,58 @@
-import { addToShop } from "./products/addToShop.js";
-addToShop();
+import { baseUrl } from "./settings/api.js";
 
-const main = document.querySelector("main");
+import { sort } from "./products/sort.js";
 
 const loading = document.querySelector(".loading");
 
-main.style.display = "none";
+const shopContainer = document.querySelector(".shop-container");
+const search = document.querySelector(".search");
 
-const delay = ms => new Promise(res => setTimeout(res, ms));
+async function getProducts() {
+  const url = baseUrl + "products";
 
-if (
-  document.readyState === "complete" ||
-  document.readyState === "loaded" ||
-  document.readyState === "interactive"
-) {
-  await delay(1000);
+  try {
+    const response = await fetch(url);
+    const json = await response.json();
 
-  main.style.display = "block";
+    let productList = json;
+    loading.style.display = "none";
 
-  loading.style.display = "none";
+    function renderContent() {
+      shopContainer.innerHTML = "";
+      productList.forEach(product => {
+        /* Add products to shop.html */
+        shopContainer.innerHTML += `
+      <div class="card hoverscale shadow">
+      <a href="product.html?id=${product.id}" class="btn">
+      <img src="${product.image[0].url}" class="card-img-top" alt="${
+          product.image[0].alternativeText
+        }">
+      <div class="card-body">
+    <h5 class="card-title">${product.title}</h5>
+    <p class="card-text text-dark">${product.description.slice(0, 30)}...</p>
+    <p class="card-text">$ ${product.price}</p>
+  </div> </a> </div>`;
+      });
+    }
+    renderContent();
+
+    // Search
+
+    search.onkeyup = function () {
+      const searchValue = event.target.value.trim().toLowerCase();
+      const filteredProducts = json.filter(function (product) {
+        if (product.title.toLowerCase().includes(searchValue)) {
+          return true;
+        }
+      });
+
+      productList = filteredProducts;
+
+      renderContent();
+    };
+    sort(productList);
+  } catch (error) {
+    console.log(error);
+  }
 }
+getProducts();

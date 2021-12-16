@@ -13,8 +13,14 @@
     padding: 0;
     .shop-container {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 60px 30px;
+      grid-template-columns: 1fr;
+      grid-gap: 40px 40px;
+
+      .card {
+        height: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
     }
   }
 }

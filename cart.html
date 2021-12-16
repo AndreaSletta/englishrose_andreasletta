@@ -4,12 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="https://use.typekit.net/ntw3qmo.css" />
+    <link
+      rel="stylesheet shortcut icon"
+      href="https://use.typekit.net/ntw3qmo.css"
+    />
     <script
       src="https://kit.fontawesome.com/d851272322.js"
       crossorigin="anonymous"
     ></script>
-    <title>English rose</title>
+    <title>English rose - Cart</title>
   </head>
   <body>
     <header>
@@ -26,6 +29,8 @@
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
+            <!--<span class="navbar-toggler-icon"></span>-->
+
             <span class="span1"></span>
             <span class="span2"></span>
             <span class="span3"></span>
@@ -33,12 +38,12 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="index.html"
+                <a class="nav-link active" aria-current="page" href="index.html"
                   >Home</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="shop.html">Shop</a>
+                <a class="nav-link" href="shop.html">Shop</a>
               </li>
 
               <li class="nav-item">
@@ -68,12 +73,12 @@
         <h1>Cart</h1>
       </div>
       <div class="container">
-        <div class="cart-container"></div>
-        <button type="button" class="btn btn-primary">
-          Proceed to checkout
-        </button>
+        <div class="cart-container">
+          <div class="loading">
+            <i class="fas fa-spinner fa-pulse"></i>
+          </div>
+        </div>
       </div>
-      <div class="container cart-container"></div>
     </main>
     <footer class="container-fluid bg-primary py-3">
       <div class="row justify-content-center">
@@ -85,66 +90,64 @@
           />
         </div>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-10 text-center text-md-start pb-1">
-          <a href="#">About us</a>
-        </div>
-        <div class="col-10 text-center text-md-start pb-1">
-          <a href="#">Contact us</a>
-        </div>
-        <div class="col-10 text-center text-md-start pb-1">
-          <a href="#">Shipping policy</a>
-        </div>
-        <div
-          class="
-            col-10
-            text-center text-md-start
-            row
-            justify-content-center
-            pb-2
-          "
-        >
-          <div class="col-10 pb-1">
-            <a href="#" class="fs-1"><i class="fab fa-facebook-square"></i></a>
-            <a href="#" class="fs-1"><i class="fab fa-instagram-square"></i></a>
+      <div class="footerWrap justify-content-between">
+        <div class="row justify-content-center col-md-3">
+          <div class="col-10 col-md-12 pb-1">
+            <a href="#">About us</a>
           </div>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-10 text-center pb-1 serif">
-          Sign up to our newsletter and be the first to hear of our newest
-          releases!
-        </div>
-        <div class="col-10 pb-1">
-          <form>
-            <div class="mb-3 justify-content-center">
-              <label for="exampleInputEmail1" class="form-label d-none"
-                >Email address</label
-              >
-              <input
-                type="email"
-                class="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-              />
-              <button type="submit" class="btn btn-dark">Sign up</button>
-            </div>
-          </form>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-10">
-          <div class="row justify-content-between">
-            <div class="col-4 text-center pb-1"><a href="#">Support</a></div>
-            <div class="col-4 text-center pb-1">
-              <a href="#">Privacy policy</a>
-            </div>
-            <div class="col-4 text-center pb-1">
-              <a href="#">Therms of use</a>
+          <div class="col-10 col-md-12 pb-1">
+            <a href="#">Contact us</a>
+          </div>
+          <div class="col-10 col-md-12 pb-1">
+            <a href="#">Shipping policy</a>
+          </div>
+          <div class="col-10 col-md-12 row justify-content-center pb-2">
+            <div class="col-10 col-md-12 pb-1 ps-0">
+              <a href="#"><i class="fab fa-facebook-square"></i></a>
+              <a href="#"><i class="fab fa-instagram-square"></i></a>
             </div>
           </div>
         </div>
-        <div class="col-10 text-center">English rose © 2021</div>
+        <div class="row justify-content-center col-md-6">
+          <div class="col-10 text-center col-md-10 pb-1 serif">
+            <p>
+              Sign up to our newsletter and be the first to hear of our newest
+              releases!
+            </p>
+          </div>
+          <div class="col-10 col-md-10 pb-1">
+            <form>
+              <div class="mb-3 justify-content-center">
+                <label for="exampleInputEmail1" class="form-label d-none"
+                  >Email address</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                />
+                <button type="submit" class="btn btn-dark">Sign up</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="row justify-content-center col-md-3">
+          <div class="col-10 col-md-12">
+            <div class="row flex-md-column justify-content-between">
+              <div class="col-4 col-md-12 pb-1 text-left">
+                <a href="#">Support</a>
+              </div>
+              <div class="col-4 col-md-12 pb-1 text-left">
+                <a href="#">Privacy policy</a>
+              </div>
+              <div class="col-4 col-md-12 pb-1 text-left">
+                <a href="#">Therms of use</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-10 col-md-12 text-left">English rose © 2021</div>
+        </div>
       </div>
     </footer>
     <script

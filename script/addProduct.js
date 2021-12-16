@@ -15,12 +15,13 @@ const isFeatured = document.querySelector("#isFeatured");
 const image = document.querySelector("#image");
 const message = document.querySelector("#message");
 
+message.style.display = "none";
+
 if (username) {
   form.addEventListener("submit", submitForm);
   function submitForm(event) {
     event.preventDefault();
 
-    message.innerHTML = "";
     const titleValue = title.value.trim();
     const infoValue = info.value.trim();
     const descriptionValue = description.value.trim();
@@ -28,6 +29,14 @@ if (username) {
     const priceValue = parseFloat(price.value);
     const isFeaturedValue = isFeatured.value.trim();
     const imageValue = image.value.trim();
+
+    // remove modal
+    function removeMessage() {
+      message.innerHTML = "";
+      message.style.display = "none";
+    }
+
+    message.addEventListener("click", removeMessage);
 
     if (
       titleValue.length === 0 ||
@@ -39,7 +48,9 @@ if (username) {
       isFeaturedValue.length === 0 ||
       imageValue.length === 0
     ) {
-      return (message.innerHTML = `<h2>Error`);
+      message.style.display = "block";
+      return (message.innerHTML = `<h2>Error</h2> 
+      <i class="fas fa-plus"></i>`);
     }
     addProduct(
       titleValue,
@@ -50,6 +61,9 @@ if (username) {
       isFeaturedValue,
       imageValue
     );
+    message.style.display = "block";
+    message.innerHTML = `<h2>Product added</h2> 
+    <i class="fas fa-plus"></i>`;
   }
 
   async function addProduct(

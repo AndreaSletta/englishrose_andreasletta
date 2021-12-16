@@ -1,6 +1,8 @@
 // Add image to herobanner
 import { baseUrl } from "../settings/api.js";
 
+const loading = document.querySelector(".loading");
+
 export function addJumbotron() {
   const jumbotron = document.querySelector(".jumbotron");
 
@@ -12,13 +14,13 @@ export function addJumbotron() {
       const json = await response.json();
 
       const images = json;
-
+      loading.style.display = "none";
       for (var i = 0; i < images.length; i++) {
         if (images[i].name === "herobanner.gif") {
           console.log(images[i]);
           jumbotron.innerHTML += `<img
         src="${images[i].url}" 
-            class="img-fluid"
+            class="img-fluid" id="jumbotron"
             alt="Makup items spread around"
           />`;
         }

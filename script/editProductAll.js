@@ -1,6 +1,7 @@
 import { baseUrl } from "./settings/api.js";
 import logoutButton from "./products/logout.js";
 import { getUsername } from "./utils/storage.js";
+const loading = document.querySelector(".loading");
 
 const username = getUsername();
 
@@ -17,6 +18,7 @@ if (username) {
       console.log(json);
 
       const productList = json;
+      loading.style.display = "none";
 
       productList.forEach(product => {
         /* Add products to shop.html */

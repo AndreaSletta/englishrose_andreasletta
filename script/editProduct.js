@@ -27,10 +27,20 @@ if (username) {
 
   const breadcrumbTitle = document.querySelector(".title");
 
+  message.style.display = "none";
+
   var oldUrl;
   var oldId;
 
   (async function () {
+    // remove modal
+    function removeMessage() {
+      message.innerHTML = "";
+      message.style.display = "none";
+    }
+
+    message.addEventListener("click", removeMessage);
+
     try {
       const response = await fetch(productURL);
 
@@ -86,7 +96,9 @@ if (username) {
       isFeaturedValue.length === 0 ||
       imageValue.length === 0
     ) {
-      return (message.innerHTML = `<h2>Error`);
+      message.style.display = "block";
+      return (message.innerHTML = `<h2>Error</h2> 
+      <i class="fas fa-plus"></i>`);
     }
 
     editProduct(
@@ -99,6 +111,9 @@ if (username) {
       imageValue,
       oldUrl
     );
+    message.style.display = "block";
+    message.innerHTML = `<h2>Product edited</h2> 
+    <i class="fas fa-plus"></i>`;
   }
 
   async function editProduct(
@@ -113,13 +128,19 @@ if (username) {
   ) {
     const url = baseUrl + "products/" + id;
 
+    const uploadUrl = baseUrl + "upload";
+    const productUrl = baseUrl + "products";
+
     console.log(oldUrl);
     console.log(image);
 
     if (oldUrl == image) {
       console.log("The same!");
     } else {
-      console.log("Different");
+      console.log("Different"); ///////
+      const uploadUrl = baseUrl + "upload";
+
+      const productUrl = baseUrl + "products";
     }
     return;
     const data = JSON.stringify({

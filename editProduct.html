@@ -4,12 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="https://use.typekit.net/ntw3qmo.css" />
+    <link
+      rel="stylesheet shortcut icon"
+      href="https://use.typekit.net/ntw3qmo.css"
+    />
     <script
       src="https://kit.fontawesome.com/d851272322.js"
       crossorigin="anonymous"
     ></script>
-    <title>English rose</title>
+    <title>English rose - Edit/Delete</title>
   </head>
   <body>
     <header>
@@ -39,7 +42,7 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="editProductAll.html"
+                <a class="nav-link active" href="editProductAll.html"
                   >Edit or delete product</a
                 >
               </li>
@@ -61,14 +64,14 @@
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="admin.html">Admin</a></li>
             <li class="breadcrumb-item" aria-current="page">
-              <a href="editProduct.html">Edit product</a>
+              <a href="editProductAll.html">Edit product</a>
             </li>
             <li class="breadcrumb-item active title" aria-current="page"></li>
           </ol>
         </nav>
       </div>
       <div class="container bg-primary">
-        <h1>Edit product</h1>
+        <h1>Edit or delete product</h1>
       </div>
 
       <div class="container editProduct">
@@ -106,7 +109,7 @@
           </div>
           <div class="form-group">
             <label for="price">Price</label>
-            <input type="text" class="form-control" id="price" />
+            <input type="number" class="form-control" id="price" />
           </div>
           <div class="form-group">
             <label for="isFeatured">Is featured?</label>
@@ -117,7 +120,7 @@
           </div>
           <div class="form-group">
             <label for="image">Image url</label>
-            <input type="text" class="form-control" id="image" />
+            <input type="url" class="form-control" id="image" />
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
