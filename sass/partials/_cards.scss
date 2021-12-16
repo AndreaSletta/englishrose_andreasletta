@@ -27,34 +27,37 @@
   }
 }
 
-.shop .container .shop-container,
-.container .shop-container {
-  .card {
-    background-color: $primary;
-    border-radius: 0;
-    border-color: transparent;
-    padding: 5px;
+.shop .container .shop-container .card {
+  background-color: $primary;
+  border-radius: 0;
+  border-color: transparent;
+  padding: 5px;
+  width: 120px;
+  margin: auto;
 
+  a {
+    padding: 0;
+  }
+  img {
+    height: 100px;
+    width: 100%;
+    object-fit: contain;
+    background-color: white;
+  }
+  .card-body {
+    padding: 0;
+    h5,
+    p,
     a {
+      margin-top: 5px;
       padding: 0;
+      font-size: 16px;
     }
-    img {
-      height: 150px;
-      width: 100%;
-      object-fit: contain;
-      background-color: white;
-    }
-    .card-body {
-      h5,
-      p,
-      a {
-        margin: 0;
-        padding: 0;
-        font-size: 16px;
-      }
-      p {
-        font-family: $font-family-base;
-      }
+    p {
+      font-family: $font-family-base;
     }
   }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
 }

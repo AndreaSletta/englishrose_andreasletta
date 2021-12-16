@@ -24,12 +24,9 @@ async function getProducts() {
         shopContainer.innerHTML += `
       <div class="card hoverscale shadow">
       <a href="product.html?id=${product.id}" class="btn">
-      <img src="${product.image[0].url}" class="card-img-top" alt="${
-          product.image[0].alternativeText
-        }">
-      <div class="card-body">
+      <img src="${product.image[0].url}" class="card-img-top" alt="${product.image[0].alternativeText}">
+      <div class="card-body ">
     <h5 class="card-title">${product.title}</h5>
-    <p class="card-text text-dark">${product.description.slice(0, 30)}...</p>
     <p class="card-text">$ ${product.price}</p>
   </div> </a> </div>`;
       });
