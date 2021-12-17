@@ -9,6 +9,8 @@
   ul li a {
     color: black;
     border: 3px solid $primary;
+    border-radius: 0px;
+    border-bottom: 0px;
     &[aria-selected="true"] {
       background-color: $primary;
     }
@@ -22,4 +24,11 @@
 .product-container .row > * {
   padding-left: 0;
   padding-right: 0;
+}
+/* Media Query for Tablets*/
+@media only screen and (min-width: 767.98px) and (max-width: 991.98px) {
+}
+
+/* Media Query for Desktop*/
+@media (min-width: 992px) {
 }

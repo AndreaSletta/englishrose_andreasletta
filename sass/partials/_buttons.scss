@@ -42,3 +42,9 @@ footer .row div form div button,
     }
   }
 }
+.product-container button {
+  border: 3px solid $primary;
+  &:hover {
+    color: $red;
+  }
+}

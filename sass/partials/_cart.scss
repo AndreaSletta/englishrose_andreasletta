@@ -1,62 +1,75 @@
 .cart-container {
   min-height: 70vh;
-  .cart-item table {
-    border-bottom: 3px solid $primary;
 
-    tbody tr {
-      width: 100%;
-      margin: auto;
-      height: 150px;
-      .remove-item {
-        transform: rotate(45deg);
-        float: right;
-        font-size: 10px;
-      }
+  .total {
+    text-align: right;
+    padding: 10px 0;
+    font-weight: 600;
+  }
+  button {
+    float: right;
+    border: 3px solid $primary;
+    background-color: white;
+    margin-bottom: 50px;
+  }
+  .remove-item {
+    transform: rotate(45deg);
+    float: right;
+    font-size: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+  .cart-item {
+    table {
+      border-bottom: 3px solid $primary;
 
-      th a img {
-        border: none;
-        height: 100%;
-      }
-      th,
-      td {
-        box-shadow: none;
-        height: 100%;
-      }
-      td {
-        box-shadow: none;
-        div div .align-row {
-          flex-direction: row;
-          text-align: right;
-        }
-        .row {
+      tbody tr {
+        width: 100%;
+        margin: auto;
+        height: 150px;
+
+        th a img {
+          border: none;
           height: 100%;
-          flex-direction: column;
+        }
+        th,
+        td {
+          box-shadow: none;
+          height: 100%;
+        }
+        td {
+          box-shadow: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
 
-          p {
-            /*
-          margin: 0;
-          margin-top: 25%;*/
+          div div .align-row {
+            flex-direction: row;
             text-align: right;
           }
-        }
-
-        div div .number {
-          display: flex;
-          flex-direction: row;
-          align-content: center;
-          justify-content: center;
-          border: 3px solid $primary;
-          padding: 5px 3px;
-          font-size: 10px;
-          align-self: start;
-          width: 70px;
-          i {
-            line-height: inherit;
+          .row {
+            height: 100%;
+            flex-direction: column;
           }
-          input {
-            width: 60%;
-            border: none;
-            text-align: center;
+
+          div div .number {
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            justify-content: center;
+            border: 3px solid $primary;
+            padding: 5px 3px;
+            font-size: 10px;
+            align-self: start;
+            width: 70px;
+            i {
+              line-height: inherit;
+            }
+            input {
+              width: 60%;
+              border: none;
+              text-align: center;
+            }
           }
         }
       }

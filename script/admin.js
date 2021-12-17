@@ -68,7 +68,7 @@ async function doLogin(email, password) {
     console.log(json);
 
     if (json.user) {
-      message.innerHTML = `<h1 class="bg-success p-3 my-3">Welcome ${json.user.username}!`;
+      message.innerHTML = `<h5 class="border border-secondary p-3 my-3">Welcome ${json.user.username}!`;
       message.style.display = "block";
       saveToken(json.jwt);
       saveUser(json.user);
@@ -81,17 +81,17 @@ async function doLogin(email, password) {
       welcomeContainer.innerHTML += `<div>
             <h1 class="text-center welcome-message"> "Welcome ${currentUsername}!"</h1>
             <p>What would you like to do?</p>
-            <button class="btn btn-light">
+            <button class="btn btn-light shadow">
               <a href="addProduct.html">Add Product</a>
             </button>
-            <button class="btn btn-light">
+            <button class="btn btn-light shadow">
               <a href="editProductAll.html"> Edit or delete product</a>
             </button>
           </div>`;
     }
 
     if (json.error) {
-      message.innerHTML = `<h1 class="bg-warning  p-3 my-3">Wrong email or password`;
+      message.innerHTML = `<h5 class=" border border-danger  p-3 my-3">Wrong email or password</h5>`;
       message.style.display = "block";
     }
   } catch (error) {

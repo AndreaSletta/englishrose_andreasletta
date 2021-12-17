@@ -2,6 +2,7 @@ import { baseUrl } from "./settings/api.js";
 import { getToken } from "./utils/storage.js";
 import logoutButton from "./products/logout.js";
 import { getUsername } from "./utils/storage.js";
+const loading = document.querySelector(".loading");
 
 const username = getUsername();
 

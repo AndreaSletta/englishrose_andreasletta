@@ -8,12 +8,12 @@
 
 .hoverscale,
 .smoothetransition {
-  transition: all, 0.5s;
+  transition: all, 0.3s;
 }
 
 .hoverscale:hover {
   transform: scale(1.05);
-  transition: all, 0.5s;
+  transition: all, 0.3s;
   cursor: pointer;
 }
 

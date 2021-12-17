@@ -14,6 +14,9 @@
   bottom: 0;
   right: 0;
 }
+.jumbotron #jumbotron {
+  left: auto;
+}
 
 .jumbotron a img:first-of-type {
   z-index: 1;
@@ -23,8 +26,7 @@
 /* Media Query for Tablets*/
 @media only screen and (min-width: 767.98px) and (max-width: 991.98px) {
   .jumbotron #jumbotron {
-    max-height: 60%;
-    left: auto;
+    max-height: 70%;
   }
   .jumbotron .container {
     padding: 90px;
@@ -34,8 +36,10 @@
 /* Media Query for Desktop*/
 @media (min-width: 922px) {
   .jumbotron img:last-of-type {
-    left: auto;
     max-height: 90%;
+  }
+  .jumbotron .container {
+    padding: 90px;
   }
   .jumbotron a img:first-of-type {
     left: 0;

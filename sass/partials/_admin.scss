@@ -15,6 +15,30 @@
     }
   }
 }
+#welcome-container div .btn {
+  background-color: white;
+  border-radius: 0;
+  border: 3px solid $primary;
+  float: right;
+}
+.login form {
+  .btn {
+    background-color: white;
+    border-radius: 0;
+    border: 3px solid $primary;
+    float: right;
+  }
+
+  input {
+    border-radius: 0px;
+  }
+}
+.message-container {
+  .border {
+    background-color: white;
+    border-width: 3px;
+  }
+}
 
 .login {
   background-image: linear-gradient(white, $primary);
@@ -22,6 +46,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 /*
 #admin-nav .container-fluid {

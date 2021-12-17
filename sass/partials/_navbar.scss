@@ -102,6 +102,15 @@ header .navbar {
 
 /* Media Query for Desktop*/
 @media (min-width: 922px) {
+  .navbar .container-fluid .navbar-toggler {
+    display: none !important;
+  }
+  #sign-out {
+    border-radius: 0px;
+    background-color: white;
+    padding-top: 0;
+    border: none;
+  }
   header .navbar .container-fluid {
     width: 90%;
     margin: auto;

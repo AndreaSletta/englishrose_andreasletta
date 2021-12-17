@@ -103,6 +103,7 @@ async function getProduct() {
           currentProducts.push(article);
           console.log(currentProducts);
           localStorage.setItem("cart", JSON.stringify(currentProducts));
+          addToCartBtn.innerHTML = "Item added";
         }
       }
     }
