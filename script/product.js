@@ -29,6 +29,8 @@ const descriptionText = document.querySelector("#description");
 const ingredientsTab = document.querySelector("#ingredients-tab");
 const ingredientsText = document.querySelector("#ingredients");
 
+const addButton = document.querySelector(".add-button");
+
 const loading = document.querySelector(".loading");
 
 async function getProduct() {
@@ -57,9 +59,15 @@ async function getProduct() {
 
     ingredientsText.innerHTML += `${product.ingredients}`;
 
+    addButton.innerHTML += `  <button type="button" class="btn btn-white border-secondary shadow  add-to-cart "data-id=${product.id}>
+    Add to cart <i class="fas fa-plus ps-2"></i>
+  </button>`;
+
     // add to cart
 
     const addToCartBtn = document.querySelector(".add-to-cart");
+
+    const currentProducts = getCartProducts();
 
     function renderContent() {
       const favButton = addToCartBtn;
@@ -67,10 +75,8 @@ async function getProduct() {
       favButton.addEventListener("click", handleClick);
 
       function handleClick() {
-        const id = this.dataset.id;
+        const id = parseInt(this.dataset.id);
         const title = this.dataset.title;
-
-        const currentProducts = getCartProducts();
 
         const article = {
           id: product.id,
@@ -81,9 +87,23 @@ async function getProduct() {
           featured: product.featured,
         };
 
-        currentProducts.push(article);
-        console.log(currentProducts);
-        localStorage.setItem("cart", JSON.stringify(currentProducts));
+        var alreadyAdded = false;
+        for (var i = 0; i < currentProducts.length; i++) {
+          if (currentProducts[i].id === id) {
+            alreadyAdded = true;
+            break;
+          }
+        }
+
+        if (alreadyAdded) {
+          console.log(product.id);
+          console.log(id);
+          addToCartBtn.innerHTML = "Item already added";
+        } else {
+          currentProducts.push(article);
+          console.log(currentProducts);
+          localStorage.setItem("cart", JSON.stringify(currentProducts));
+        }
       }
     }
     renderContent();

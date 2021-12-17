@@ -18,9 +18,6 @@ if (inCart.length === 0) {
   `;
 } else {
   inCart.forEach(product => {
-    console.log(product);
-    console.log(product.price);
-
     loading.style.display = "none";
 
     cartContainer.innerHTML += `<div class="cart-item">
@@ -28,14 +25,14 @@ if (inCart.length === 0) {
  
   <tbody>
     <tr class="row">
-      <th scope="row" class="col-3">
+      <th scope="row" class="col-4">
       <a href="product.html?id=${product.id}">
       <img class="img-thumbnail hoverscale" src="${product.image_url}" alt="${product.image}">
      </a> 
      </th>
-      <td class="col-3 ">
+      <td class="col-4 ">
       <div class="row ">
-      <div class="col"> ${product.title}</div>
+      <div class="col"> <h5>${product.title}</h5></div>
       <div class="col ">
       <div class="number">
         <i class="fas fa-minus minus"></i>
@@ -46,24 +43,15 @@ if (inCart.length === 0) {
       </div>
       </td>
       
-        <td class="col-6 ">
+        <td class="col-4 ">
           <div class="row ">
             <div class="col">
-              <i class="fas fa-plus plus remove-item"></i>  
+              <i class="fas fa-plus plus remove-item" data-id=${product.id} data-title="${product.title}" data-image="${product.image}"data-image-url="${product.image_url}" data-title="${product.title}" data-title="${product.featured}"    data-price="${product.price}"></i>  
             </div> 
-          <div class="col ">
-          <div class="row align-row">
-            <div class="col-6">
+          <div class="col">        
               <p>
                 $${product.price} EUR
-              </p>
-            </div>
-            <div class="col-6">
-              <p>
-                ${product.featured}
-              </p>
-            </div>
-            </div>
+              </p>         
           </div>
         </div> 
       </td>
@@ -81,4 +69,26 @@ if (inCart.length === 0) {
   <button type="button" class="btn btn-primary">
     Proceed to checkout
     </button>`;
+}
+
+// remove from array
+
+const favButtons = document.querySelectorAll(".remove-item");
+
+favButtons.forEach(button => {
+  button.addEventListener("click", handleClick);
+});
+
+function handleClick() {
+  const id = parseInt(this.dataset.id);
+
+  const currentProducts = getCartProducts();
+
+  const newProducts = currentProducts.filter(product => product.id !== id);
+  saveProducts(newProducts);
+}
+
+function saveProducts(products) {
+  localStorage.setItem("cart", JSON.stringify(products));
+  location.reload();
 }

@@ -3,7 +3,7 @@ export function getCartProducts() {
 
   if (!cartProducts) {
     return [];
-  } else if (cartProducts[0].id == undefined) {
+  } else if (cartProducts.length === 0) {
     return [];
   } else {
     return cartProducts;

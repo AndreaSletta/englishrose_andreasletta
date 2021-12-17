@@ -422,6 +422,7 @@ main,
 body {
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
 }
 
 .shop div .dropdown button {
@@ -577,7 +578,7 @@ body {
 }
 
 .carousel .carousel-inner {
-  /*overflow: visible;*/
+  overflow: visible;
 }
 
 .carousel .carousel-inner .carousel-item .row .card a:hover {
@@ -807,6 +808,11 @@ body {
   font-size: 30px;
 }
 
+.loadingCarousel i {
+  color: #c30b0b;
+  font-size: 30px;
+}
+
 #message {
   position: fixed;
   top: 50%;
@@ -843,6 +849,10 @@ body {
           flex-direction: column;
 }
 
+.cart-container {
+  min-height: 70vh;
+}
+
 .cart-container .cart-item table {
   border-bottom: 3px solid #fddfdf;
 }
@@ -850,6 +860,7 @@ body {
 .cart-container .cart-item table tbody tr {
   width: 100%;
   margin: auto;
+  height: 150px;
 }
 
 .cart-container .cart-item table tbody tr .remove-item {
@@ -861,12 +872,14 @@ body {
 
 .cart-container .cart-item table tbody tr th a img {
   border: none;
+  height: 100%;
 }
 
 .cart-container .cart-item table tbody tr th,
 .cart-container .cart-item table tbody tr td {
   -webkit-box-shadow: none;
           box-shadow: none;
+  height: 100%;
 }
 
 .cart-container .cart-item table tbody tr td {
@@ -890,9 +903,10 @@ body {
           flex-direction: column;
 }
 
-.cart-container .cart-item table tbody tr td .row .pb-3 p {
-  margin: 0;
-  margin-top: 25%;
+.cart-container .cart-item table tbody tr td .row p {
+  /*
+          margin: 0;
+          margin-top: 25%;*/
   text-align: right;
 }
 
@@ -910,10 +924,11 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   border: 3px solid #fddfdf;
-  padding: 3px;
+  padding: 5px 3px;
   font-size: 10px;
   -ms-flex-item-align: start;
       align-self: start;
+  width: 70px;
 }
 
 .cart-container .cart-item table tbody tr td div div .number i {

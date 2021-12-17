@@ -18,7 +18,18 @@ export function addJumbotron() {
       for (var i = 0; i < images.length; i++) {
         if (images[i].name === "herobanner.gif") {
           console.log(images[i]);
-          jumbotron.innerHTML += `<img
+          jumbotron.innerHTML += `
+          
+          <div class="container">
+          <h1>
+            Enhance your <br />
+            <span class="text-red">inner </span> beauty
+          </h1>
+          <button type="button" class="btn shadow">
+            <a href="shop.html">Shop now</a>
+          </button>
+        </div>
+          <img
         src="${images[i].url}" 
             class="img-fluid" id="jumbotron"
             alt="Makup items spread around"
