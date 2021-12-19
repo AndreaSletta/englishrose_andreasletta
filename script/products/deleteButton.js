@@ -10,10 +10,7 @@ export function deleteButton(id) {
   const message = document.querySelector("#message");
 
   button.onclick = async function () {
-    console.log(id);
-
     const doDelete = confirm("are you sure?");
-    console.log(doDelete);
 
     if (doDelete) {
       const url = baseUrl + "products/" + id;
@@ -34,7 +31,6 @@ export function deleteButton(id) {
       try {
         const response = await fetch(url, options);
         const json = await response.json();
-        console.log(json);
         location.href = "/admin.html";
       } catch (error) {
         console.log(error);

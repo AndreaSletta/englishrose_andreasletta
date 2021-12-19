@@ -5,10 +5,8 @@ const inCart = getCartProducts();
 const cartContainer = document.querySelector(".cart-container");
 
 const loading = document.querySelector(".loading");
-console.log(inCart);
 
 if (inCart.length === 0) {
-  console.log("empty");
   loading.style.display = "none";
   cartContainer.innerHTML = `
   <div class="container-fluid">
@@ -20,7 +18,6 @@ if (inCart.length === 0) {
   var sum = 0;
 
   inCart.forEach(product => {
-    console.log(product.price);
     sum += product.price;
 
     loading.style.display = "none";

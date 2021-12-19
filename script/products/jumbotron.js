@@ -17,7 +17,6 @@ export function addJumbotron() {
       loading.style.display = "none";
       for (var i = 0; i < images.length; i++) {
         if (images[i].name === "herobanner.gif") {
-          console.log(images[i]);
           jumbotron.innerHTML += `
           
           <div class="container">

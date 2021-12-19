@@ -50,9 +50,7 @@ if (username) {
 
       breadcrumbTitle.innerHTML += `${product.title}`;
 
-      console.log(json.id);
       deleteButton(json.id);
-      console.log(product);
 
       productId.value = product.id;
       title.value = product.title;
@@ -130,14 +128,9 @@ if (username) {
     const uploadUrl = baseUrl + "upload";
     const productUrl = baseUrl + "products";
 
-    console.log(oldUrl);
-    console.log(image);
-
     const token = getToken();
 
     if (oldUrl == image) {
-      console.log("The same!");
-
       const data = JSON.stringify({
         title: title,
         info: info,
@@ -163,7 +156,6 @@ if (username) {
         message.style.display = "block";
         message.innerHTML = `<h2>Product edited</h2> 
         <i class="fas fa-plus"></i>`;
-        console.log(json);
       } catch (error) {
         console.log(error);
         message.style.display = "block";
@@ -171,14 +163,11 @@ if (username) {
         <i class="fas fa-plus"></i>`;
       }
     } else {
-      console.log("Different");
-
       fetch(image)
         .then(response => response.blob())
         .then(function (myBlob) {
           const formData = new FormData();
           formData.append("files", myBlob);
-          console.log(formData);
 
           //Upload the image to strapi
           fetch(uploadUrl, {
@@ -190,10 +179,7 @@ if (username) {
           })
             .then(response => response.json())
             .then(result => {
-              console.log(result);
-
               const imageId = result[0].id;
-              console.log(imageId);
 
               const data = JSON.stringify({
                 title: title,
@@ -216,7 +202,6 @@ if (username) {
               };
               try {
                 fetch(url, options).then(response => {
-                  console.log(response);
                   message.style.display = "block";
                   message.innerHTML = `<h2>Product edited</h2> 
                   <i class="fas fa-plus"></i>`;

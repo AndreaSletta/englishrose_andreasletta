@@ -65,8 +65,6 @@ async function doLogin(email, password) {
 
     message.innerHTML = "";
 
-    console.log(json);
-
     if (json.user) {
       message.innerHTML = `<h5 class="border border-secondary p-3 my-3">Welcome ${json.user.username}!`;
       message.style.display = "block";
@@ -116,7 +114,6 @@ if (username) {
               <a href="editProductAll.html"> Edit or delete product</a>
             </button>
           </div>`;
-  console.log(currentUsername);
 }
 
 logoutButton();
