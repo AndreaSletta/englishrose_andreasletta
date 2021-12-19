@@ -21,14 +21,14 @@ if (username) {
       loading.style.display = "none";
 
       productList.forEach(product => {
-        /* Add products to shop.html */
         shopContainer.innerHTML += `
-      <div class="card col-10">
-      <a href="editProduct.html?id=${product.id}" class="btn">
-      <img src="${product.image[0].url}" class="card-img-top" alt="${product.image[0].alternativeText}">
-      <div class="card-body">
-    <h5 class="card-title">${product.title}</h5>
-  </div>  </a></div>`;
+        <div class="card hoverscale shadow">
+        <a href="editProduct.html?id=${product.id}" class="btn">
+        <img src="${product.image[0].url}" class="card-img-top" alt="${product.image[0].alternativeText}">
+        <div class="card-body ">
+      <h5 class="card-title">${product.title}</h5>
+      <p class="card-text">$ ${product.price} EUR</p>
+    </div> </a> </div>`;
       });
     } catch (error) {
       console.log(error);

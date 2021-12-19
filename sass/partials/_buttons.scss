@@ -48,3 +48,26 @@ footer .row div form div button,
     color: $red;
   }
 }
+
+form .submit-btn,
+.deleteContainer .submit-btn {
+  border-radius: 0px;
+  float: right;
+  width: 100px;
+  margin-top: 15px;
+
+  &:hover {
+    color: $red;
+  }
+}
+
+.deleteContainer .submit-btn {
+  margin-bottom: 40px;
+  clear: right;
+}
+
+form .deleteContainer {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}

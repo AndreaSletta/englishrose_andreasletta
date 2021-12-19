@@ -91,7 +91,13 @@ header .navbar {
     }
   }
 }
-
+#sign-out {
+  border-radius: 0px;
+  background-color: white;
+  padding-top: 0;
+  border: none;
+  padding-left: 0;
+}
 /* Media Query for Tablets*/
 @media only screen and (min-width: 767.98px) and (max-width: 991.98px) {
   header .navbar .container-fluid {
@@ -105,12 +111,7 @@ header .navbar {
   .navbar .container-fluid .navbar-toggler {
     display: none !important;
   }
-  #sign-out {
-    border-radius: 0px;
-    background-color: white;
-    padding-top: 0;
-    border: none;
-  }
+
   header .navbar .container-fluid {
     width: 90%;
     margin: auto;

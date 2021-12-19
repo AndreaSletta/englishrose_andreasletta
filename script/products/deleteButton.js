@@ -3,7 +3,7 @@ import { getToken } from "../utils/storage.js";
 
 export function deleteButton(id) {
   const container = document.querySelector(".deleteContainer");
-  container.innerHTML = `<button type="button" class="delete btn btn-primary">Delete </button>`;
+  container.innerHTML = `<button type="button" class="delete btn btn-primary submit-btn">Delete </button>`;
 
   const button = document.querySelector("button.delete");
 
