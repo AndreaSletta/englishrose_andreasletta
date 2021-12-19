@@ -85,7 +85,6 @@ if (username) {
       .then(function (myBlob) {
         const formData = new FormData();
         formData.append("files", myBlob);
-        console.log(formData);
 
         //Upload the image to strapi
         fetch(uploadUrl, {
@@ -97,10 +96,7 @@ if (username) {
         })
           .then(response => response.json())
           .then(result => {
-            console.log(result);
-
             const imageId = result[0].id;
-            console.log(imageId);
 
             const data = JSON.stringify({
               title: title,
@@ -123,7 +119,6 @@ if (username) {
             };
             try {
               fetch(productUrl, options).then(response => {
-                console.log(response);
                 message.style.display = "block";
                 message.innerHTML = `<h2>Product added</h2> 
                 <i class="fas fa-plus"></i>`;
@@ -143,7 +138,6 @@ if (username) {
             }
           })
           .catch(function (err) {
-            console.log("error:");
             console.log(err);
             message.style.display = "block";
             message.innerHTML = `<h2>Upload failed</h2> 
