@@ -48,7 +48,7 @@ export function addCarousel() {
       }
 
       if (window.innerWidth > 767.98 && window.innerWidth < 991.98) {
-        for (var i = 0; i < featuredArray.length - 2; i += 2) {
+        for (var i = 0; i < featuredArray.length - 1; i += 2) {
           carouselContainer.innerHTML += `
       <div class="carousel-item">
       <div class="row justify-content-around">
@@ -78,7 +78,7 @@ export function addCarousel() {
       }
 
       if (window.innerWidth > 922) {
-        for (var i = 0; i < featuredArray.length - 3; i += 3) {
+        for (var i = 0; i < featuredArray.length - 2; i += 3) {
           carouselContainer.innerHTML += `
       <div class="carousel-item">
       <div class="row justify-content-around">
