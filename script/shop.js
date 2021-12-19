@@ -20,7 +20,7 @@ async function getProducts() {
     function renderContent() {
       shopContainer.innerHTML = "";
       productList.forEach(product => {
-        /* Add products to shop.html */
+        // Add products to shop.html
         shopContainer.innerHTML += `
       <div class="card hoverscale shadow">
       <a href="product.html?id=${product.id}" class="btn">

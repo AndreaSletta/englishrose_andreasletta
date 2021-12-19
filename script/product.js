@@ -98,7 +98,7 @@ async function getProduct() {
         if (alreadyAdded) {
           console.log(product.id);
           console.log(id);
-          addToCartBtn.innerHTML = "Item already added";
+          addToCartBtn.innerHTML = "Item already in cart";
         } else {
           currentProducts.push(article);
           console.log(currentProducts);

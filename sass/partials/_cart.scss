@@ -11,6 +11,19 @@
     border: 3px solid $primary;
     background-color: white;
     margin-bottom: 50px;
+    border-radius: 0px;
+
+    &:hover {
+      background-color: white;
+      border: 3px solid $primary;
+      color: $red;
+    }
+    a {
+      color: black;
+      &:hover {
+        color: $red;
+      }
+    }
   }
   .remove-item {
     transform: rotate(45deg);
@@ -18,6 +31,9 @@
     font-size: 10px;
     margin-top: 10px;
     margin-right: 10px;
+    &:hover {
+      color: $red;
+    }
   }
   .cart-item {
     table {

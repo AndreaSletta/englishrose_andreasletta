@@ -2,6 +2,7 @@ header .navbar {
   padding-top: 10px;
   padding-bottom: 10px;
   z-index: 10;
+  min-height: 50px;
 }
 
 header .navbar .container-fluid, header .navbar .container-sm, header .navbar .container-md, header .navbar .container-lg, header .navbar .container-xl, header .navbar .container-xxl {
@@ -252,6 +253,20 @@ footer .row div a,
   font-weight: 600;
 }
 
+/* Media Query for Tablets*/
+@media only screen and (min-width: 767.98px) and (max-width: 991.98px) {
+  h1, .h1 {
+    font-size: 35px !important;
+  }
+}
+
+/* Media Query for Desktop*/
+@media (min-width: 922px) {
+  h1, .h1 {
+    font-size: 35px !important;
+  }
+}
+
 .jumbotron .container .btn {
   background-color: white;
   border-radius: 0px;
@@ -323,10 +338,18 @@ form .submit-btn:hover,
   clear: right;
 }
 
+.addProduct form button {
+  margin-bottom: 40px;
+}
+
 form .deleteContainer {
   width: 100%;
   padding-left: 0;
   padding-right: 0;
+}
+
+.login form button:hover {
+  color: #c30b0b;
 }
 
 footer {
@@ -651,10 +674,6 @@ body {
       align-content: space-between;
 }
 
-/*
-#carouselExampleIndicators .carousel-inner {
-  overflow: visible;
-}*/
 /* Media Query for Tablets*/
 @media only screen and (min-width: 767.98px) and (max-width: 991.98px) {
   .carousel-item .row {
@@ -949,9 +968,6 @@ body {
   padding: 10px;
 }
 
-/*
-
-*/
 /* Media Query for Tablet*/
 @media only screen and (min-width: 767.98px) and (max-width: 991.98px) {
   .addProduct form,
@@ -972,8 +988,6 @@ body {
 
 .loading {
   height: 100%;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#fddfdf));
-  background-image: linear-gradient(white, #fddfdf);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1046,6 +1060,21 @@ body {
   border: 3px solid #fddfdf;
   background-color: white;
   margin-bottom: 50px;
+  border-radius: 0px;
+}
+
+.cart-container button:hover {
+  background-color: white;
+  border: 3px solid #fddfdf;
+  color: #c30b0b;
+}
+
+.cart-container button a {
+  color: black;
+}
+
+.cart-container button a:hover {
+  color: #c30b0b;
 }
 
 .cart-container .remove-item {
@@ -1055,6 +1084,10 @@ body {
   font-size: 10px;
   margin-top: 10px;
   margin-right: 10px;
+}
+
+.cart-container .remove-item:hover {
+  color: #c30b0b;
 }
 
 .cart-container .cart-item table {

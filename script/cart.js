@@ -13,7 +13,7 @@ if (inCart.length === 0) {
   cartContainer.innerHTML = `
   <div class="container-fluid">
   <h2>The cart is empty</h2>  <button type="button" class="btn btn-primary">
-  <a class="nav-link text-dark" href="shop.html">Back to shop</a>
+  <a class="nav-link " href="shop.html">Back to shop</a>
 </button><div>
   `;
 } else {
@@ -32,7 +32,7 @@ if (inCart.length === 0) {
     <tr class="row">
       <th scope="row" class="col-4 col-md-3">
       <a href="product.html?id=${product.id}">
-      <img class="img-thumbnail hoverscale" src="${product.image_url}" alt="${product.image}">
+      <img class="img-thumbnail hoverscale " src="${product.image_url}" alt="${product.image}">
      </a> 
      </th>
       <td class="col-3 col-md-2">

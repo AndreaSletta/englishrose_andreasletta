@@ -66,8 +66,18 @@ form .submit-btn,
   clear: right;
 }
 
+.addProduct form button {
+  margin-bottom: 40px;
+}
+
 form .deleteContainer {
   width: 100%;
   padding-left: 0;
   padding-right: 0;
+}
+
+.login form button {
+  &:hover {
+    color: $red;
+  }
 }

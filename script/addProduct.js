@@ -50,7 +50,7 @@ if (username) {
       imageValue.length === 0
     ) {
       message.style.display = "block";
-      return (message.innerHTML = `<h2>Error</h2> 
+      return (message.innerHTML = `<h2>Invalid input</h2> 
       <i class="fas fa-plus"></i>`);
     }
     addProduct(
@@ -63,7 +63,7 @@ if (username) {
       imageValue
     );
     message.style.display = "block";
-    message.innerHTML = `<h2>Product added</h2> 
+    message.innerHTML = `<h2>Processing, please wait...</h2> 
     <i class="fas fa-plus"></i>`;
   }
 
@@ -80,12 +80,9 @@ if (username) {
     const token = getToken();
     const productUrl = baseUrl + "products";
 
-    // fetch image from provided url
     fetch(image)
-      //Convert image to binary
       .then(response => response.blob())
       .then(function (myBlob) {
-        //Add image data to formdata
         const formData = new FormData();
         formData.append("files", myBlob);
         console.log(formData);
@@ -94,20 +91,17 @@ if (username) {
         fetch(uploadUrl, {
           method: "POST",
           headers: {
-            Authorization: `Bearer ${token}`, // <- Don't forget Authorization header if you are using it.
+            Authorization: `Bearer ${token}`,
           },
           body: formData,
         })
-          //Await upload confirmation
           .then(response => response.json())
           .then(result => {
             console.log(result);
 
-            //Save strapi id of new image
             const imageId = result[0].id;
             console.log(imageId);
 
-            //Create new item and link to newly created image
             const data = JSON.stringify({
               title: title,
               info: info,
@@ -130,18 +124,30 @@ if (username) {
             try {
               fetch(productUrl, options).then(response => {
                 console.log(response);
-              });
+                message.style.display = "block";
+                message.innerHTML = `<h2>Product added</h2> 
+                <i class="fas fa-plus"></i>`;
 
-              //const json = await response.json();
-              //console.log(json);
-              //console.log(imageUrl);
+                function reload() {
+                  setTimeout(function () {
+                    location.reload();
+                  }, 3000);
+                }
+                reload();
+              });
             } catch (error) {
               console.log(error);
+              message.style.display = "block";
+              message.innerHTML = `<h2>Upload failed</h2> 
+              <i class="fas fa-plus"></i>`;
             }
           })
           .catch(function (err) {
             console.log("error:");
             console.log(err);
+            message.style.display = "block";
+            message.innerHTML = `<h2>Upload failed</h2> 
+            <i class="fas fa-plus"></i>`;
           });
       });
   }

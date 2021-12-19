@@ -18,7 +18,7 @@ export function addCarousel() {
 
       var featuredArray = [];
 
-      /* Add featured products to array */
+      // Add featured products to array
       for (var i = 0; i < product.length; i++) {
         const isFeatured = product[i].featured;
 
@@ -27,7 +27,7 @@ export function addCarousel() {
         }
       }
 
-      /* Add products to index.html carousel */
+      // Add products to index.html carousel
 
       if (window.innerWidth < 766.97) {
         for (var i = 0; i < featuredArray.length; i += 1) {

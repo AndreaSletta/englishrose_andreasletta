@@ -19,3 +19,16 @@ footer .row div a,
 #price {
   font-weight: 600;
 }
+
+/* Media Query for Tablets*/
+@media only screen and (min-width: 767.98px) and (max-width: 991.98px) {
+  h1 {
+    font-size: 35px !important;
+  }
+}
+/* Media Query for Desktop*/
+@media (min-width: 922px) {
+  h1 {
+    font-size: 35px !important;
+  }
+}
