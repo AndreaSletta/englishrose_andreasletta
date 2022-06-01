@@ -105,7 +105,7 @@ if (username) {
               ingredients: ingredients,
               price: price,
               featured: isFeatured,
-              image: imageId,
+              images: imageId,
             });
 
             // Upload new product
