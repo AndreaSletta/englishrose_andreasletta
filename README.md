@@ -1,4 +1,4 @@
-# Your project title
+# Semester Project 2
 
 ![image](https://andreasletta-portfolio2.netlify.app/static/media/englishrose_home.6b6cf529d6b0749fc49c.png)
 
