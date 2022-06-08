@@ -12,14 +12,20 @@ On the admin page the user can add, edit and delete products.
 
 ## Website built With
 
-- [React.js](https://reactjs.org/)
-- [Bootstrap](https://getbootstrap.com)
-- [Sass](https://sass-lang.com)
+<p align="left">
+  <a href="{https://reactjs.org"><img alt="React shield" src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"} /></a>
+  <a href="{https://getbootstrap.com"><img alt="Bootstrap shield" src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"} /></a>
+   <a href="{https://sass-lang.com"><img alt="Sass shield" src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white"} /></a>
+</p> 
+
+
 
 ## API built with
 
-- [Strapi] (https://strapi.io)
-- [Heroku] (https://heroku.com)
+<p align="left">
+  <a href="https://strapi.io"><img alt="Strapi shield" src="https://img.shields.io/badge/strapi-2e7eea?style=for-the-badge&logo=strapi&logoColor=white" /></a>
+   <a href="https://heroku.com"><img alt="Heroku shield" src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white" /></a>
+</p> 
 
 ## Getting Started
 
@@ -49,5 +55,6 @@ npm run start
 
 ## Contact
 
-[My LinkedIn page](https://www.linkedin.com/in/andrea-sletta-larsen-381b37121/)
-[My Portfolio](https://andreasletta.com/)
+[LinkedIn](https://www.linkedin.com/in/andrea-sletta-larsen-381b37121/)
+
+[Portfolio](https://andreasletta.com/)
